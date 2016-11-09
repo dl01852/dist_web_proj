@@ -10,7 +10,7 @@ def hello_world():
 
 @app.route('/products')
 def products_page():
-    return render_template('ProductPage.html')
+    return render_template('ProductsPage.html')
 
 if __name__ == '__main__':
     app.run()
