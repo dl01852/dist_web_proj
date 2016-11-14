@@ -1,0 +1,51 @@
+#border1
+{
+	border-radius:200px;
+	background:gold;
+	padding:50px;
+}
+
+body
+{
+	background:#FAFAFA;
+	color:#3333DD;
+}
+
+div.header h1
+{
+	margin: 0px 30px 30px;
+
+}
+
+div.header h2
+{
+	text-align:right;
+}
+
+div.header img
+{
+	width:25px;
+	height:25px;
+}
+
+div.banner img
+{
+	width:100%;
+	height:200px;
+}
+
+h1
+{
+	font-size:32pt;
+	text-align:center;
+}
+
+a:link
+{
+    color:blue;
+}
+
+a:hover
+{
+    color:gold;
+}
