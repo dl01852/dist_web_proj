@@ -45,3 +45,11 @@ border-bottom: none;
 ul#tabnav a:hover { /* settings for hover effect */
 background:#fff; /* set desired hover color */
 }
+#banner{
+    width: 100%;
+}
+.test{
+    text-align: center;
+   font-size: 30px;
+    color: crimson;
+}
