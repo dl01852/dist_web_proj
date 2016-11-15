@@ -36,10 +36,6 @@ def mobo_page():
 def ram_page():
     return render_template('RAMPage.html')
 
-#@app.route('/HardDrives')
-#def hardDrive_page():
-#    return render_template('HardDrivePage.html')
-
 @app.route('/CPUs')
 def cpu_page():
     return render_template('CPUPage.html')
@@ -48,6 +44,13 @@ def cpu_page():
 def psu_page():
     return render_template('PSUPage.html')
 
+@app.route('/VideoCards')
+def gpu_page():
+  return render_template('GPUPage.html')
+#@app.route('/HardDrives')
+#def hardDrive_page():
+#    return render_template('HardDrivePage.html')
+
 #@app.route('/Cases')
 #def cases_page():
 #   return render_template('CasesPage.html')
@@ -55,10 +58,6 @@ def psu_page():
 #@app.route('/SSDs')
 #def ssds_page():
 #   return render_template('SSDPage.html')
-
-@app.route('/VideoCards')
-def gpu_page():
-  return render_template('GPUPage.html')
 
 #@app.route('/Coolers')
 #def cooler_page():
