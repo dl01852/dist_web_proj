@@ -91,3 +91,9 @@ a.home_link:visited
 {
     color:#FAFAFA;
 }
+
+table.product_table
+{
+    background: #FAFAFA;
+    align:center;
+}
