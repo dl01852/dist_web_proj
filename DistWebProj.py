@@ -27,7 +27,50 @@ def post_user():
 def products_page():
     return render_template('ProductsPage.html')
 
+@app.route('/motherboards')
+def mobo_page():
+    return render_template('MotherBoardPage.html')
+
+
+@app.route('/RAM')
+def ram_page():
+    return render_template('RAMPage.html')
+
+#@app.route('/HardDrives')
+#def hardDrive_page():
+#    return render_template('HardDrivePage.html')
+
+@app.route('/CPUs')
+def cpu_page():
+    return render_template('CPUPage.html')
+
+@app.route('/PSUs')
+def psu_page():
+    return render_template('PSUPage.html')
+
+#@app.route('/Cases')
+#def cases_page():
+#   return render_template('CasesPage.html')
+
+#@app.route('/SSDs')
+#def ssds_page():
+#   return render_template('SSDPage.html')
+
+@app.route('/VideoCards')
+def gpu_page():
+  return render_template('GPUPage.html')
+
+#@app.route('/Coolers')
+#def cooler_page():
+#   return render_template('CoolersPage.html')
+
+#@app.route('/OperatingSystems')
+#def os_page():
+#   return render_template('OSPage.html')
+
+
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
