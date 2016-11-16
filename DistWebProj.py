@@ -59,7 +59,9 @@ def gpu_page():
     gpu=GPU.query.all()
     return render_template('GPUPage.html', supplies=gpu)
 
-
+@app.route('/cart')
+def cart_page():
+    return render_template('CartPage.html')
 
 
 
