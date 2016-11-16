@@ -23,5 +23,32 @@
 </ul>
 
      <p>This is the GPU Page</p>
+<p>
+         <table border="1">
+         <tr>
+             <td>Brand</td>
+             <td>Model</td>
+             <td>Interface</td>
+             <td>Manufacturer</td>
+             <td>Type</td>
+             <td>Size</td>
+             <td>Memory Type</td>
+             <td></td>
+         </tr>
+         {% for gpu in supplies %}
+         <tr>
+             <td> {{ gpu.brand }}</td>
+             <td> {{ gpu.model }}</td>
+             <td> {{ gpu.interface }}</td>
+             <td> {{ gpu.manufacturer }}</td>
+             <td> {{ gpu.type }}</td>
+             <td> {{ gpu.size }}</td>
+             <td>{{ gpu.memorytype }}</td>
+{#             <td> <img src={{ supplies.img }}></td>#}
+         </tr>
+        {% endfor %}
+         </table>
+
+     </p>
 	  </body>
 </html>

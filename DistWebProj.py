@@ -36,14 +36,18 @@ def mobo_page():
 
 @app.route('/RAM')
 def ram_page():
-    return render_template('RAMPage.html')
+    from objects import Ram
+    ram=Ram.query.all()
+    return render_template('RAMPage.html', supplies=ram)
 
 @app.route('/CPUs')
 def cpu_page():
-    return render_template('CPUPage.html')
+    from objects import CPU
+    cpu=CPU.query.all()
+    return render_template('CPUPage.html', supplies=cpu)
 
 
-@app.route('/PSUs', methods=['POST', 'GET'])
+@app.route('/PSUs')
 def psu_page():
     from objects import Powersupply
     supplies = Powersupply.query.all()
@@ -51,7 +55,9 @@ def psu_page():
 
 @app.route('/VideoCards')
 def gpu_page():
-  return render_template('GPUPage.html')
+    from objects import GPU
+    gpu=GPU.query.all()
+    return render_template('GPUPage.html', supplies=gpu)
 #@app.route('/HardDrives')
 #def hardDrive_page():
 #    return render_template('HardDrivePage.html')

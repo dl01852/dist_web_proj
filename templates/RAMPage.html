@@ -23,5 +23,30 @@
 </ul>
 
      <p>This is the RAM Page</p>
+      <p>
+         <table border="1">
+         <tr>
+             <td>Model</td>
+             <td>Size</td>
+             <td>Type</td>
+             <td>Speed</td>
+             <td>Voltage</td>
+             <td>Addtional Notes</td>
+             <td></td>
+         </tr>
+         {% for ram in supplies %}
+         <tr>
+             <td> {{ ram.model }}</td>
+             <td> {{ ram.size }}</td>
+             <td> {{ ram.type }}</td>
+             <td> {{ ram.speed }}</td>
+             <td> {{ ram.voltage }}</td>
+             <td> {{ ram.notes }}</td>
+{#             <td> <img src={{ supplies.img }}></td>#}
+         </tr>
+        {% endfor %}
+         </table>
+
+     </p>
 	  </body>
 </html>
