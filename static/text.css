@@ -72,12 +72,17 @@ h3{
 	padding:50px;
 }
 
-a.cart_link:link
+a.home_link:link
 {
     color:blue;
 }
 
-a.cart_link:hover
+a.home_link:hover
+{
+    color:#FAFAFA;
+}
+
+a.home_link:visited
 {
     color:#FAFAFA;
 }
