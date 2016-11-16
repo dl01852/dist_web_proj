@@ -43,21 +43,21 @@ class CPU(database.Model):
     _tablename_ = 'CPU'
 
     id = database.Column(database.INTEGER,primary_key=True)
-    Brand = database.column(database.String)
-    Type = database.column(database.String)
-    Model = database.column(database.String)
-    Socket = database.column(database.String)
-    OperatingFrequency = database.column(database.String)
-    ThermalDesignPower = database.column(database.String)
+    brand = database.column(database.String)
+    type = database.column(database.String)
+    model = database.column(database.String)
+    socket = database.column(database.String)
+    operatingFrequency = database.column(database.String)
+    thermalDesignPower = database.column(database.String)
 
     def __init__(self,id,Brand,Type,Model,Socket,OperatingFrequency,ThermalDesignPower):
         self.id = id
-        self.Brand = Brand
-        self.Type = Type
-        self.Model = Model
-        self.Socket = Socket
-        self.OperatingFrequency = OperatingFrequency
-        self.ThermalDesignPower =ThermalDesignPower
+        self.brand = Brand
+        self.type = Type
+        self.model = Model
+        self.socket = Socket
+        self.operatingFrequency = OperatingFrequency
+        self.thermalDesignPower =ThermalDesignPower
 
     def __repr__(self):
         return "%d\t%s\t%s\t%s\t%s\t%s\t%s" (self.id,self.Brand,self.Type,self.Model,self.Socket,self.OperatingFrequency,self.ThermalDesignPower)
@@ -68,13 +68,13 @@ class GPU(database.Model):
 
     id = database.Column(database.INTEGER,primary_key=True)
 
-    Brand = database.column(database.String)
-    Model = database.column(database.String)
-    Interface = database.column(database.String)
-    Manufacturer = database.column(database.String)
-    Type = database.column(database.String)
-    Size = database.column(database.String)
-    MemoryType = database.column(database.String)
+    brand = database.column(database.String)
+    model = database.column(database.String)
+    interface = database.column(database.String)
+    manufacturer = database.column(database.String)
+    type = database.column(database.String)
+    size = database.column(database.String)
+    memoryType = database.column(database.String)
 
     def _init_(self,id,Brand,Model,Interface,Manufacturer,Type,Size,MemoryType):
         self.id = id
@@ -95,10 +95,10 @@ class PowerSupply(database.Model):
     _tablename_ = 'PowerSupply'
 
     id = database.Column(database.INTEGER,primary_key=True)
-    Brand = database.column(database.String)
-    Model = database.column(database.String)
-    MaxPower = database.column(database.String)
-    Dimensions = database.column(database.String)
+    brand = database.column(database.String)
+    model = database.column(database.String)
+    maxPower = database.column(database.String)
+    dimensions = database.column(database.String)
 
     def __init__(self,id,Brand,Model,MaxPower,Dimensions):
         self.id = id
@@ -118,11 +118,11 @@ class PowerSupply(database.Model):
 
 class MotherBoard:
     id = database.Column(database.INTEGER,primary_key=True)
-    Brand = database.column(database.String)
-    Model = database.column(database.String)
-    SupportedSocket = database.column(database.String)
-    SupportedCPU = database.column(database.String)
-    ExpansionSlots = database.column(database.String)
+    brand = database.column(database.String)
+    model = database.column(database.String)
+    supportedsocket = database.column(database.String)
+    supportedcpu = database.column(database.String)
+    expansionSlots = database.column(database.String)
 
 
     def __init__(self,id,Brand,Model,SupportedSocket,SupportedCPU,ExpansionSlots):
