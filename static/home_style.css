@@ -1,13 +1,15 @@
 #border1
 {
 	border-radius:200px;
-	background:gold;
+	background:#3333DD;
+	color:#FAFAFA;
 	padding:50px;
 }
 
 body
 {
-	background:#FAFAFA;
+	background: #FDDD60;
+
 	color:#3333DD;
 }
 
@@ -34,6 +36,22 @@ div.banner img
 	height:200px;
 }
 
+div.featured_content
+{
+	color:black;
+	font-family: Arial;
+	font-size: 20px;
+	background:#FAFAFA;
+	padding:10px 25px;
+	margin:20px;
+}
+
+img.featured_icon
+{
+	width:50px;
+	height:auto;
+}
+
 h1
 {
 	font-size:32pt;
@@ -47,5 +65,5 @@ a.cart_link:link
 
 a.cart_link:hover
 {
-    color:gold;
+    background:#FAFAFA;
 }

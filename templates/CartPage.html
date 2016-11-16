@@ -8,12 +8,26 @@
         <script type="text/javascript">
             function loadTable()
             {
-                if(true)//there exist cart items from database
+                if(true)//Make call to database to see if items exist in cart
                 {
                     var location = document.getElementsByClassName('cart_content')[0];
                     var t = document.createElement("table");
+                    t.style.width='100%';
+                    t.setAttribute('border','1');
                     var tHead = document.createElement("thead");
                     var tBody = document.createElement("tbody");
+
+                    var row = document.createElement("tr");
+                    var d = document.createElement("td");
+                    d.innerHTML="Big Booty Bitches Part Cart";
+                    row.appendChild(d);
+                    tHead.appendChild(row);
+                    t.appendChild(tHead);
+                    location.appendChild(t);
+                }
+
+                else
+                {
 
                 }
             }
