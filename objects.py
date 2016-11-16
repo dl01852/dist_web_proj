@@ -72,7 +72,7 @@ class Ram(database.Model):
 
     @staticmethod
     def columns():
-        return ["size","model","type","speed","voltage","notes"]
+        return ["Size","Model","Type","Speed","Voltage","Notes"]
 
 class CPU(database.Model):
 
@@ -101,7 +101,7 @@ class CPU(database.Model):
 
     @staticmethod
     def columns():
-        return ["brand","type","mode","socket","operatingfrequency","thermaldesignpower"]
+        return ["Brand","Type","Mode","Socket","Operating Frequency","Thermal Design Power"]
 class GPU(database.Model):
 
     __tablename__ = 'gpu'
