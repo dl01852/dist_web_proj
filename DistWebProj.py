@@ -40,6 +40,8 @@ def ram_page():
 def cpu_page():
     return render_template('CPUPage.html')
 
+#stuff
+
 @app.route('/PSUs', methods=['POST', 'GET'])
 def psu_page():
     from objects import PowerSupply
