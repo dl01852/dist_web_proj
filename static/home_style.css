@@ -58,22 +58,22 @@ h1
 	text-align:center;
 }
 
-a.cart_link
+a.product_link
 {
     text-decoration: none;
 }
 
-a.cart_link:link
+a.product_link:link
 {
     color:#33D;
 }
 
-a.cart_link:hover
+a.product_link:hover
 {
     color:#FAFAFA;
 }
 
-a.cart_link:visited
+a.product_link:visited
 {
     color:#33D;
 }
