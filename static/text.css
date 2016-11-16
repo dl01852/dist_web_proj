@@ -72,6 +72,11 @@ h3{
 	padding:50px;
 }
 
+a.home_link
+{
+    text-decoration: none;
+}
+
 a.home_link:link
 {
     color:blue;
@@ -79,7 +84,7 @@ a.home_link:link
 
 a.home_link:hover
 {
-    color:#FAFAFA;
+    color:gold;
 }
 
 a.home_link:visited
