@@ -110,6 +110,10 @@ class PowerSupply(database.Model):
     def __repr__(self):
         return "%d\t%s\t%s\t%s\t%s\t%s" (self.id,self.Brand,self.Model,self.MaxPower,self.Dimensions)
 
+    def test(self):
+        return "%d"(self.Brand)
+
+
 
 
 class MotherBoard:
