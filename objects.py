@@ -19,122 +19,125 @@ class User(database.Model):
 
 class Ram(database.Model):
 
-    _tablename_ = 'RAM'
+    _tablename_ = 'ram'
 
     id = database.Column(database.INTEGER,primary_key=True)
-    Model = database.Column(database.String)
-    Type = database.Column(database.String)
-    Speed = database.Column(database.String)
-    Voltage = database.Column(database.String)
-    Notes = database.Column(database.String)
+    model = database.Column(database.String)
+    type = database.Column(database.String)
+    speed = database.Column(database.String)
+    voltage = database.Column(database.String)
+    notes = database.Column(database.String)
 
-    def _init_(self, id, Model,Type,Speed,Voltage,Notes):
-        self.Model = Model
-        self.Type = Type
-        self.Speed = Speed
-        self.Voltage = Voltage
-        self.Notes = Notes
+    def _init_(self, id, model,type,speed,voltage,notes):
+        self.model = model
+        self.type = type
+        self.speed = speed
+        self.voltage = voltage
+        self.notes = notes
 
     def __repr__(self):
-        return "%d\t%s\t%s\t%s\t%s\t%s"(self.id,self.Model,self.Type,self.Speed,self.Voltage,self.Notes)
+        return "%d\t%s\t%s\t%s\t%s\t%s"(self.id,self.model,self.type,self.speed,self.voltage,self.notes)
 
 class CPU(database.Model):
 
-    _tablename_ = 'CPU'
+    _tablename_ = 'cpu'
 
     id = database.Column(database.INTEGER,primary_key=True)
-    Brand = database.column(database.String)
-    Type = database.column(database.String)
-    Model = database.column(database.String)
-    Socket = database.column(database.String)
-    OperatingFrequency = database.column(database.String)
-    ThermalDesignPower = database.column(database.String)
+    brand = database.column(database.String)
+    type = database.column(database.String)
+    model = database.column(database.String)
+    socket = database.column(database.String)
+    operatingFrequency = database.column(database.String)
+    thermalDesignPower = database.column(database.String)
 
-    def __init__(self,id,Brand,Type,Model,Socket,OperatingFrequency,ThermalDesignPower):
+    def __init__(self,id,brand,type,model,socket,operatingfrequency,thermaldesignpower):
         self.id = id
-        self.Brand = Brand
-        self.Type = Type
-        self.Model = Model
-        self.Socket = Socket
-        self.OperatingFrequency = OperatingFrequency
-        self.ThermalDesignPower =ThermalDesignPower
+        self.brand = brand
+        self.type = type
+        self.model = model
+        self.socket = socket
+        self.operatingfrequency = operatingfrequency
+        self.thermaldesignpoower =thermaldesignpower
 
     def __repr__(self):
-        return "%d\t%s\t%s\t%s\t%s\t%s\t%s" (self.id,self.Brand,self.Type,self.Model,self.Socket,self.OperatingFrequency,self.ThermalDesignPower)
+        return "%d\t%s\t%s\t%s\t%s\t%s\t%s" (self.id,self.brand,self.type,self.model,self.socket,self.operatingfrequency,self.thermaldesignpower)
 
 class GPU(database.Model):
 
-    _tablename_ = 'GPU'
+    _tablename_ = 'gpu'
 
     id = database.Column(database.INTEGER,primary_key=True)
 
-    Brand = database.column(database.String)
-    Model = database.column(database.String)
-    Interface = database.column(database.String)
-    Manufacturer = database.column(database.String)
-    Type = database.column(database.String)
-    Size = database.column(database.String)
-    MemoryType = database.column(database.String)
+    brand = database.column(database.String)
+    model = database.column(database.String)
+    interface = database.column(database.String)
+    manufacturer = database.column(database.String)
+    type = database.column(database.String)
+    size = database.column(database.String)
+    memoryType = database.column(database.String)
 
-    def _init_(self,id,Brand,Model,Interface,Manufacturer,Type,Size,MemoryType):
+    def _init_(self,id,brand,model,interface,manufacturer,type,size,memorytype):
         self.id = id
-        self.Brand = Brand
-        self.Model = Model
-        self.Interface = Interface
-        self.Manufacturer = Manufacturer
-        self.Type = Type
-        self.Size = Size
-        self.MemoryType = MemoryType
+        self.brand = brand
+        self.model = model
+        self.interface = interface
+        self.manufacturer = manufacturer
+        self.type = type
+        self.size = size
+        self.memorytype = memorytype
 
     def _repr_(self):
-        return  "%d\t%s\t%s\t%s\t%s\t%s\t%s\s" (self.id,self.Brand,self.Model,self.Interface,self.Manufacturer,self.Type,self.Size,self.MemoryType)
+        return  "%d\t%s\t%s\t%s\t%s\t%s\t%s\s" (self.id,self.brand,self.model,self,interface,self.manufacturer,self.type,self.size,self.memorytype)
 
 
 class PowerSupply(database.Model):
 
-    _tablename_ = 'PowerSupply'
+    _tablename_ = 'powersupply'
 
     id = database.Column(database.INTEGER,primary_key=True)
-    Brand = database.column(database.String)
-    Model = database.column(database.String)
-    MaxPower = database.column(database.String)
-    Dimensions = database.column(database.String)
+    brand = database.column(database.String)
+    model = database.column(database.String)
+    maxPower = database.column(database.String)
+    dimensions = database.column(database.String)
 
-    def __init__(self,id,Brand,Model,MaxPower,Dimensions):
+    def __init__(self,id,brand,model,maxpower,dimensions):
         self.id = id
-        self.Brand = Brand
-        self.Model = Model
-        self.MaxPower = MaxPower
-        self.Dimensions = Dimensions
+        self.brand = brand
+        self.model = model
+        self.maxpower = maxpower
+        self.dimensions = dimensions
 
     def __repr__(self):
-        return "%d\t%s\t%s\t%s\t%s\t%s" (self.id,self.Brand,self.Model,self.MaxPower,self.Dimensions)
+        return "%d\t%s\t%s\t%s\t%s\t%s" (self.id,self.brand,self.model,self.maxpower,self.dimensions)
 
     def test(self):
-        return "%d"(self.Brand)
+        return "%d"(self.brand)
 
 
 
 
 class MotherBoard:
+
+    _tablename_ = 'motherboard'
+
     id = database.Column(database.INTEGER,primary_key=True)
-    Brand = database.column(database.String)
-    Model = database.column(database.String)
-    SupportedSocket = database.column(database.String)
-    SupportedCPU = database.column(database.String)
-    ExpansionSlots = database.column(database.String)
+    brand = database.column(database.String)
+    model = database.column(database.String)
+    supportedsocket = database.column(database.String)
+    supportedcpu = database.column(database.String)
+    expansionSlots = database.column(database.String)
 
 
-    def __init__(self,id,Brand,Model,SupportedSocket,SupportedCPU,ExpansionSlots):
+    def __init__(self,id,brand,model,supportedsocket,supportedcpu,expansionslots):
         self.id = id
-        self.Brand = Brand
-        self.Model = Model
-        self.SupportedSocket = SupportedSocket
-        self.SupportedCPU = SupportedCPU
-        self.ExpansionSlots = ExpansionSlots
+        self.brand = brand
+        self.model = model
+        self.supportedSocket = supportedsocket
+        self.supportedCPU = supportedcpu
+        self.expansionslots = expansionslots
 
     def __repr__(self):
-        return "%d\t%s\t%s\t%s\t%s\t%s" (self.id,self.Brand,self.Model,self.SupportedSocket,self.SupportedCPU,self.ExpansionSlots)
+        return "%d\t%s\t%s\t%s\t%s\t%s" (self.id,self.brand,self.model,self.supportedsocket,self.supportedcpu,self.expansionslots)
 
 
 
