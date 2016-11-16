@@ -11,7 +11,7 @@ database = SQLAlchemy(app)
 
 @app.route('/')
 def add_user():
-    return render_template('HomePage.html')
+    return render_template('HomePage.html', db=database)
 
 
 @app.route('/post_user', methods=['POST'])

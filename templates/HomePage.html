@@ -29,8 +29,10 @@
             </div>
 
             <div class="item1">
-                <h2><img class="featured_icon" src="http://flight800.org/nasa_logo.gif">GeForce 980 Ti Graphics Card</h2>
-                <p>Description here</p>
+                {% for table in db.query.all() %}
+                    {% n = range(0,5) | random() %}
+                    <p>{{ n }}</p>
+                {% endfor %}
             </div>
             <div class="item2">
                 <h2><img class="featured_icon" src="http://flight800.org/nasa_logo.gif">Intel i7 QuadCore Processor</h2>
