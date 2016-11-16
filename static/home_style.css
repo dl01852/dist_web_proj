@@ -58,6 +58,11 @@ h1
 	text-align:center;
 }
 
+a.cart_link
+{
+    text-decoration: none;
+}
+
 a.cart_link:link
 {
     color:blue;
@@ -65,5 +70,10 @@ a.cart_link:link
 
 a.cart_link:hover
 {
-    background:#FAFAFA;
+    color:gold;
+}
+
+a.cart_link:visited
+{
+    color:blue;
 }
