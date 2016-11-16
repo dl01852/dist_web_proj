@@ -46,6 +46,12 @@ div.featured_content
 	margin:20px;
 }
 
+div.featured_content img
+{
+	width:200px;
+	height:auto;
+}
+
 div.feature_header
 {
 	font-size:30px;
