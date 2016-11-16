@@ -1,0 +1,30 @@
+body {
+    background-color: #FDDD60;
+}
+
+
+
+h1{
+    font-size:32pt;
+     color: blue;
+}
+
+a.home_link
+{
+    text-decoration: none;
+}
+
+a.home_link:link
+{
+    color:blue;
+}
+
+a.home_link:hover
+{
+    color:gold;
+}
+
+a.home_link:visited
+{
+    color:blue;
+}

@@ -9,7 +9,7 @@
 		<!-- Header showing name of website -->
 		<div class="header">
 			<h1 id="border1">GSU Computer Company</h1>
-			<h2><a href="products">Cart</a><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/28468-200.png"></h2>
+			<h2><a href="products" class ="product_link">Explorer</a></h2>
 		</div>
 
 		<!-- Banner picture of some computer stuff -->
@@ -24,12 +24,20 @@
 
         <!-- Featured content -->
         <div class="featured_content">
+            <div class="feature_header">
+                <h2>Featured Items</h2>
+            </div>
+
             <div class="item1">
-                <h2><img class="featured_icon" src="http://flight800.org/nasa_logo.gif">GeForce 980 Ti Graphics Card</h2>
+{#                {% for table in db.query.all() %}#}
+{#                    {% n = range(0,5) | random() %}#}
+{#                    <p>{{ n }}</p>#}
+{#                {% endfor %}#}
+                <h2><img class="featured_icon" src="http://images.bit-tech.net/content_images/2015/05/nvidia-geforce-gtx-980-ti-review/980ti-1b.jpg">GeForce GTX 980 Ti</h2>
                 <p>Description here</p>
             </div>
             <div class="item2">
-                <h2><img class="featured_icon" src="http://flight800.org/nasa_logo.gif">Intel i7 QuadCore Processor</h2>
+                <h2><img class="featured_icon" src="http://www.thessdreview.com/wp-content/uploads/2012/02/3820-Rear31.jpg">Intel i7 QuadCore Processor 3820</h2>
                 <p>Description here</p>
             </div>
         </div>

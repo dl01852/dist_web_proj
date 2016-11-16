@@ -1,6 +1,6 @@
 body {
 font: 100% verdana, arial, sans-serif;
-background-color: #fff;
+background-color:#FDDD60 ;
 margin: 50px;
 }
 
@@ -33,15 +33,68 @@ padding-top: 4px; /* must change with respect to padding (X) above and below */
 }
 
 ul#tabnav li a { /* settings for all tab links */
-padding: 3px 4px; 
+padding: 3px 4px;
 border: 1px solid #DAA520; /* tabborder color */
 background-color:	#000080 ; /* tab background */
 color: #fff; /* tab font color */
-margin-right: 0px; 
+margin-right: 0px;
 text-decoration: none;
 border-bottom: none;
 }
 
 ul#tabnav a:hover { /* settings for hover effect */
 background:#fff; /* set desired hover color */
+}
+#banner{
+    width: 100%;
+}
+h1{
+    text-align: center;
+   font-size: 32pt;
+   color: #3333DD
+}
+
+#h2{
+    width:50px;
+	height: 50px;
+}
+h3{
+    text-align: right;
+    width:25px;
+	height:25px;
+}
+
+#border1
+{
+	border-radius:200px;
+	background:#3333DD;
+	color:#FAFAFA;
+	padding:50px;
+}
+
+a.home_link
+{
+    text-decoration: none;
+}
+
+a.home_link:link
+{
+    color:blue;
+}
+
+a.home_link:hover
+{
+    color:gold;
+}
+
+a.home_link:visited
+{
+    color:#FAFAFA;
+}
+
+table.product_table
+{
+    background: #FAFAFA;
+    color:#000080;
+    margin:auto;
 }

@@ -38,12 +38,25 @@ div.banner img
 
 div.featured_content
 {
-	color:black;
+	color:#000080;
 	font-family: Arial;
 	font-size: 20px;
 	background:#FAFAFA;
 	padding:10px 25px;
 	margin:20px;
+}
+
+div.featured_content img
+{
+	width:200px;
+	height:auto;
+}
+
+div.feature_header
+{
+	font-size:30px;
+	border-bottom: solid 2px;
+	text-align:center;
 }
 
 img.featured_icon
@@ -58,12 +71,22 @@ h1
 	text-align:center;
 }
 
-a.cart_link:link
+a.product_link
 {
-    color:blue;
+    text-decoration: none;
 }
 
-a.cart_link:hover
+a.product_link:link
 {
-    background:#FAFAFA;
+    color:#33D;
+}
+
+a.product_link:hover
+{
+    color:#FAFAFA;
+}
+
+a.product_link:visited
+{
+    color:#33D;
 }
