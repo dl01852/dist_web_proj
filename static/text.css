@@ -1,6 +1,6 @@
 body {
 font: 100% verdana, arial, sans-serif;
-background-color: #fff;
+background-color:#FDDD60 ;
 margin: 50px;
 }
 
@@ -62,4 +62,22 @@ h3{
     text-align: right;
     width:25px;
 	height:25px;
+}
+
+#border1
+{
+	border-radius:200px;
+	background:#3333DD;
+	color:#FAFAFA;
+	padding:50px;
+}
+
+a.cart_link:link
+{
+    color:blue;
+}
+
+a.cart_link:hover
+{
+    color:#FAFAFA;
 }
