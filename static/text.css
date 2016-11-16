@@ -95,5 +95,6 @@ a.home_link:visited
 table.product_table
 {
     background: #FAFAFA;
-    align:center;
+    color:#FAFAFA;
+    margin:auto;
 }
