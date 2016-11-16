@@ -22,11 +22,11 @@ class Ram(database.Model):
     _tablename_ = 'RAM'
 
     id = database.Column(database.INTEGER,primary_key=True)
-    Model = database.Column(database.String)
-    Type = database.Column(database.String)
-    Speed = database.Column(database.String)
-    Voltage = database.Column(database.String)
-    Notes = database.Column(database.String)
+    model = database.Column(database.String)
+    type = database.Column(database.String)
+    speed = database.Column(database.String)
+    voltage = database.Column(database.String)
+    notes = database.Column(database.String)
 
     def _init_(self, id, Model,Type,Speed,Voltage,Notes):
         self.Model = Model
