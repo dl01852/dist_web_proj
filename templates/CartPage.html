@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href ="../static/cart_style.css">
+        <title>Checkout Cart</title>
+
+        <script type="text/javascript">
+            function loadTable()
+            {
+                if(true)//Make call to database to see if items exist in cart
+                {
+                    //setup of table
+                    var location = document.getElementsByClassName('cart_content')[0];
+                    var t = document.createElement("table");
+                    t.style.width='100%';
+                    t.setAttribute('border','1');
+                    var tHead = document.createElement("thead");
+                    var tBody = document.createElement("tbody");
+
+                    //add header to table
+                    var th = document.createElement("th");
+                    th.innerHTML="Part Cart";
+                    th.setAttribute("colSpan","3");
+                    tHead.appendChild(th);
+
+                    //add body of table
+                    for(var i=0;i<4;i++)//for each item in cart database
+                    {
+                        //add a column for picture, name, and price
+                        var row = document.createElement("tr");
+                        for(var j=0;j<3;j++)
+                        {
+                            var col = document.createElement("td");
+                            switch(j)
+                            {
+                                case 0://picture
+                                    col.innerHTML="I'm a picture";
+                                    row.appendChild(col);
+                                    break;
+                                case 1://name
+                                    col.innerHTML="I'm a product";
+                                    row.appendChild(col);
+                                    break;
+                                case 2://price
+                                    col.innerHTML="I'm a price";
+                                    row.appendChild(col);
+                                    break;
+                            }
+                        }
+                        tBody.appendChild(row);
+                    }
+                    t.appendChild(tHead);
+                    t.appendChild(tBody);
+                    location.appendChild(t);
+                }
+
+                else
+                {
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Cart</h1>
+            <input type="button" value="Click here for table" onclick="loadTable()">
+        </div>
+        <div class="cart_content">
+
+        </div>
+    </body>
+</html>

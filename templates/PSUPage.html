@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+	   <meta charset = "utf-8">
+	   <title>PSU Page</title>
+	    <link href="../static/text.css" rel="stylesheet" type="text/css" />
+	 </head>
+	 <body>
+	 <center> GSU Computer INC.</center>
+	<ul id="tabnav">
+{#  <li class="tab1"><a href="#">Towers</a></li>#}
+  <li class="tab2"><a href="CPUs">CPUS</a></li>
+  <li class="tab3"><a href="VideoCards">GPUS</a></li>
+  <li class="tab4"><a href="motherboards">Motherboards</a></li>
+  <li class="tab5"><a href="RAM">RAM</a></li>
+  <li class="tab6"><a href="PSUs">Power Supply</a></li>
+{#  <li class="tab7"><a href="#">Hard Drive</a></li>#}
+{#  <li class="tab8"><a href="#">SSD</a></li>#}
+{#  <li class="tab9"><a href="#">Coolers</a></li>#}
+{#  <li class="tab10"><a href="#">OS</a></li>#}
+
+</ul>
+
+
+     <p> {% for supply in supplies %}
+         <ul>
+             <li> Brand: {{ supply.brand }} </li>
+           <li> Model: {{ supply.model }}</li>
+            <li>{{ supply.maxpower }}</li>
+            <li> {{ supply.dimensions }}</li>
+         </ul>
+     {% endfor %}
+     </p>
+	  </body>
+</html>
