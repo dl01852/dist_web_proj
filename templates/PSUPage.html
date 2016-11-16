@@ -22,7 +22,15 @@
 
 </ul>
 
-     <p>This is the Power Supply Page</p>
-     <p> {{ psu }}</p>
+
+     <p> {% for supply in supplies %}
+         <ul>
+             <li> Brand: {{ supply.brand }} </li>
+           <li> Model: {{ supply.model }}</li>
+            <li>{{ supply.maxpower }}</li>
+            <li> {{ supply.dimensions }}</li>
+         </ul>
+     {% endfor %}
+     </p>
 	  </body>
 </html>

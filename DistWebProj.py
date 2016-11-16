@@ -29,7 +29,9 @@ def products_page():
 
 @app.route('/motherboards')
 def mobo_page():
-    return render_template('MotherBoardPage.html')
+    from objects import User
+    users = User.query.all()
+    return render_template('MotherBoardPage.html', users=users)
 
 
 @app.route('/RAM')
@@ -40,15 +42,12 @@ def ram_page():
 def cpu_page():
     return render_template('CPUPage.html')
 
-#stuff
 
 @app.route('/PSUs', methods=['POST', 'GET'])
 def psu_page():
-    from objects import PowerSupply
-    if request.method=='GET':
-        psu=PowerSupply.query.filter_by(id).first
-
-    return render_template('PSUPage.html',psu=psu.Brand )
+    from objects import Powersupply
+    supplies = Powersupply.query.all()
+    return render_template('PSUPage.html',supplies=supplies)
 
 @app.route('/VideoCards')
 def gpu_page():

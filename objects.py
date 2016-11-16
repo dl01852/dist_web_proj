@@ -17,6 +17,26 @@ class User(database.Model):
         return "%s:%s" % (self.username, self.password)
 
 
+class Powersupply(database.Model):
+
+    __tablename__ = 'powersupply'
+
+    id = database.Column(database.INTEGER, primary_key=True)
+    brand = database.Column(database.VARCHAR, nullable=True)
+    model = database.Column(database.VARCHAR, nullable=True)
+    maxpower= database.Column(database.VARCHAR, nullable=True)
+    dimensions = database.Column(database.VARCHAR, nullable=True)
+
+    def __init__(self, brand, model, maxpower, dimensions):
+        self.brand = brand
+        self.model = model
+        self.maxpower = maxpower
+        self.dimensions = dimensions
+
+    def __repr__(self):
+        return "%s\t%s\t%s\t%s" % (self.brand, self.model, self.maxpower, self.dimensions)
+
+
 class Ram(database.Model):
 
     _tablename_ = 'ram'
@@ -89,29 +109,6 @@ class GPU(database.Model):
     def _repr_(self):
         return  "%d\t%s\t%s\t%s\t%s\t%s\t%s\s" (self.id,self.brand,self.model,self,interface,self.manufacturer,self.type,self.size,self.memorytype)
 
-
-class PowerSupply(database.Model):
-
-    _tablename_ = 'powersupply'
-
-    id = database.Column(database.INTEGER,primary_key=True)
-    brand = database.column(database.String)
-    model = database.column(database.String)
-    maxPower = database.column(database.String)
-    dimensions = database.column(database.String)
-
-    def __init__(self,id,brand,model,maxpower,dimensions):
-        self.id = id
-        self.brand = brand
-        self.model = model
-        self.maxpower = maxpower
-        self.dimensions = dimensions
-
-    def __repr__(self):
-        return "%d\t%s\t%s\t%s\t%s\t%s" (self.id,self.brand,self.model,self.maxpower,self.dimensions)
-
-    def test(self):
-        return "%d"(self.brand)
 
 
 
