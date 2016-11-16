@@ -40,12 +40,12 @@ h1
 	text-align:center;
 }
 
-a:link
+a.cart_link:link
 {
     color:blue;
 }
 
-a:hover
+a.cart_link:hover
 {
     color:gold;
 }
