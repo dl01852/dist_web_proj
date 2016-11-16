@@ -30,34 +30,29 @@ def products_page():
 @app.route('/motherboards')
 def mobo_page():
     from objects import MotherBoard
-    mobo=MotherBoard.query.all()
-    return render_template('MotherBoardPage.html', supplies=mobo)
+    return render_template('productTemplate.html', table=MotherBoard)
 
 
 @app.route('/RAM')
 def ram_page():
     from objects import Ram
-    ram=Ram.query.all()
-    return render_template('RAMPage.html', supplies=ram)
+    return render_template('productTemplate.html', table=Ram)
 
 @app.route('/CPUs')
 def cpu_page():
     from objects import CPU
-    cpu=CPU.query.all()
-    return render_template('CPUPage.html', supplies=cpu)
+    return render_template('productTemplate.html', table=CPU)
 
 
 @app.route('/PSUs')
 def psu_page():
     from objects import Powersupply
-    supplies = Powersupply.query.all()
-    return render_template('PSUPage.html',supplies=supplies)
+    return render_template('productTemplate.html', table=Powersupply)
 
 @app.route('/VideoCards')
 def gpu_page():
     from objects import GPU
-    gpu=GPU.query.all()
-    return render_template('GPUPage.html', supplies=gpu)
+    return render_template('productTemplate.html', table=GPU)
 
 @app.route('/cart')
 def cart_page():

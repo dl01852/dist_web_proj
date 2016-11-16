@@ -17,6 +17,8 @@ class User(database.Model):
         return "%s:%s" % (self.username, self.password)
 
 
+
+
 class Powersupply(database.Model):
 
     __tablename__ = 'powersupply'
@@ -38,6 +40,9 @@ class Powersupply(database.Model):
     def __repr__(self):
         return "%s\t%s\t%s\t%s\t%s" % (self.img,self.brand, self.model, self.maxpower, self.dimensions)
 
+    @staticmethod
+    def columns():
+        return ["Brand", "Model", "Max Power", "Dimensions"]
 
 class Ram(database.Model):
 
@@ -54,8 +59,6 @@ class Ram(database.Model):
 
 
     def __init__(self,img, model,size,type,speed,voltage,notes):
-
-
         self.model = model
         self.size=size
         self.type = type
@@ -65,7 +68,11 @@ class Ram(database.Model):
         self.img = img
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img,self.size,self.model,self.type,self.speed,self.voltage,self.notes)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.size,self.model,self.type,self.speed,self.voltage,self.notes)
+
+    @staticmethod
+    def columns():
+        return ["size","model","type","speed","voltage","notes"]
 
 class CPU(database.Model):
 
@@ -90,8 +97,11 @@ class CPU(database.Model):
         self.thermaldesignpoower = thermaldesignpower
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t" %(self.img,self.brand,self.type,self.model,self.socket,self.operatingfrequency,self.thermaldesignpower)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s" %(self.img,self.brand,self.type,self.model,self.socket,self.operatingfrequency,self.thermaldesignpower)
 
+    @staticmethod
+    def columns():
+        return ["brand","type","mode","socket","operatingfrequency","thermaldesignpower"]
 class GPU(database.Model):
 
     __tablename__ = 'gpu'
@@ -117,10 +127,11 @@ class GPU(database.Model):
         self.memorytype = memorytype
 
     def __repr__(self):
-        return  "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img,self.brand,self.model,self.interface,self.manufacturer,self.type,self.size,self.memorytype)
+        return  "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand,self.model,self.interface,self.manufacturer,self.type,self.size,self.memorytype)
 
-
-
+    @staticmethod
+    def columns():
+        return ["Brand","Model","Interface","Manufacturer","Type","Size","Memory Type"]
 
 
 class MotherBoard(database.Model):
@@ -145,9 +156,11 @@ class MotherBoard(database.Model):
         self.expansionslots = expansionslots
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t" (self.img,self.brand,self.model,self.supportedsocket,self.supportedcpu,self.expansionslots)
+        return "%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand,self.model,self.supportedsocket,self.supportedcpu,self.expansionslots)
 
-
+    @staticmethod
+    def columns():
+        return ["Brand","Model","Supported Socket","Supported CPU", "Expansion Slots"]
 
 
 
