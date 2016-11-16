@@ -40,9 +40,13 @@ def ram_page():
 def cpu_page():
     return render_template('CPUPage.html')
 
-@app.route('/PSUs')
+@app.route('/PSUs', methods=['POST', 'GET'])
 def psu_page():
-    return render_template('PSUPage.html')
+    from objects import PowerSupply
+    if request.method=='GET':
+        psu=PowerSupply.query.filter_by(id).first
+
+    return render_template('PSUPage.html',psu=psu.Brand )
 
 @app.route('/VideoCards')
 def gpu_page():
