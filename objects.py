@@ -42,6 +42,7 @@ class Ram(database.Model):
     __tablename__ = 'ram'
 
     id = database.Column(database.INTEGER,primary_key=True)
+    img = database.Column(database.VARCHAR, nullable=True)
     model = database.Column(database.VARCHAR, nullable=True)
     size=database.Column(database.VARCHAR, nullable=True)
     type = database.Column(database.VARCHAR, nullable=True)
@@ -49,16 +50,20 @@ class Ram(database.Model):
     voltage = database.Column(database.VARCHAR, nullable=True)
     notes = database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self, model,size,type,speed,voltage,notes):
+
+    def __init__(self,img, model,size,type,speed,voltage,notes):
+
+
         self.model = model
         self.size=size
         self.type = type
         self.speed = speed
         self.voltage = voltage
         self.notes = notes
+        self.img = img
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t" % (self.size,self.model,self.type,self.speed,self.voltage,self.notes)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img,self.size,self.model,self.type,self.speed,self.voltage,self.notes)
 
 class CPU(database.Model):
 
@@ -69,8 +74,8 @@ class CPU(database.Model):
     type = database.Column(database.VARCHAR, nullable=True)
     model = database.Column(database.VARCHAR, nullable=True)
     socket = database.Column(database.VARCHAR, nullable=True)
-    operatingFrequency = database.Column(database.VARCHAR, nullable=True)
-    thermalDesignPower = database.Column(database.VARCHAR, nullable=True)
+    operatingfrequency = database.Column(database.VARCHAR, nullable=True)
+    thermaldesignpower = database.Column(database.VARCHAR, nullable=True)
 
     def __init__(self,brand,type,model,socket,operatingfrequency,thermaldesignpower):
         self.brand = brand
@@ -113,7 +118,7 @@ class GPU(database.Model):
 
 
 
-class MotherBoard:
+class MotherBoard(database.Model):
 
     __tablename__ = 'motherboard'
 
@@ -122,14 +127,14 @@ class MotherBoard:
     model = database.Column(database.VARCHAR, nullable=True)
     supportedsocket = database.Column(database.VARCHAR, nullable=True)
     supportedcpu = database.Column(database.VARCHAR, nullable=True)
-    expansionSlots = database.Column(database.VARCHAR, nullable=True)
+    expansionslots = database.Column(database.VARCHAR, nullable=True)
 
 
     def __init__(self,brand,model,supportedsocket,supportedcpu,expansionslots):
         self.brand = brand
         self.model = model
-        self.supportedSocket = supportedsocket
-        self.supportedCPU = supportedcpu
+        self.supportedsocket = supportedsocket
+        self.supportedcpu = supportedcpu
         self.expansionslots = expansionslots
 
     def __repr__(self):

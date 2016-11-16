@@ -23,5 +23,30 @@
 </ul>
 
      <p>This is the CPU Page</p>
+      <p>
+         <table>
+         <tr>
+             <td>Brand</td>
+             <td>Type</td>
+             <td>Model</td>
+             <td>Socket</td>
+             <td>Operating Frequency</td>
+             <td>Thermal Design Power</td>
+             <td></td>
+         </tr>
+         {% for cpu in supplies %}
+         <tr>
+             <td> {{ cpu.brand }}</td>
+             <td> {{ cpu.type }}</td>
+             <td> {{ cpu.model }}</td>
+             <td> {{ cpu.socket }}</td>
+             <td> {{ cpu.operatingfrequency }}</td>
+             <td> {{ cpu.thermaldesignpower }}</td>
+{#             <td> <img src={{ cpu.img }}></td>#}
+         </tr>
+        {% endfor %}
+         </table>
+
+     </p>
 	  </body>
 </html>

@@ -29,9 +29,9 @@ def products_page():
 
 @app.route('/motherboards')
 def mobo_page():
-    from objects import User
-    users = User.query.all()
-    return render_template('MotherBoardPage.html', users=users)
+    from objects import MotherBoard
+    mobo=MotherBoard.query.all()
+    return render_template('MotherBoardPage.html', supplies=mobo)
 
 
 @app.route('/RAM')

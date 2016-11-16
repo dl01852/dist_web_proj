@@ -25,6 +25,29 @@
 </ul>
 
      <p>This is the Mother Board Page</p>
-        <p> {{ users }}</p>
+
+        <p>
+         <table>
+         <tr>
+             <td>Brand</td>
+             <td>Model</td>
+             <td>Socket</td>
+             <td>Supported CPU</td>
+             <td>Expansion Slots</td>
+             <td></td>
+         </tr>
+         {% for mobo in supplies %}
+         <tr>
+             <td> {{ mobo.brand }}</td>
+             <td> {{ mobo.model }}</td>
+             <td> {{ mobo.supportedsocket }}</td>
+             <td> {{ mobo.supportedcpu }}</td>
+             <td> {{ mobo.expansionslots }}</td>
+{#             <td> <img src={{ mobo.img }}></td>#}
+         </tr>
+        {% endfor %}
+         </table>
+
+     </p>
 	  </body>
 </html>
