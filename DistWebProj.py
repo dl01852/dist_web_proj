@@ -58,6 +58,11 @@ def gpu_page():
     from objects import GPU
     gpu=GPU.query.all()
     return render_template('GPUPage.html', supplies=gpu)
+
+
+
+
+
 #@app.route('/HardDrives')
 #def hardDrive_page():
 #    return render_template('HardDrivePage.html')
