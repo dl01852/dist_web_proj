@@ -38,12 +38,19 @@ div.banner img
 
 div.featured_content
 {
-	color:black;
+	color:#000080;
 	font-family: Arial;
 	font-size: 20px;
 	background:#FAFAFA;
 	padding:10px 25px;
 	margin:20px;
+}
+
+div.feature_header
+{
+	font-size:30px;
+	border-bottom: solid 2px;
+	text-align:center;
 }
 
 img.featured_icon
