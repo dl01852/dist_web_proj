@@ -1,6 +1,5 @@
 #border1
 {
-	font: 100% verdana, arial, sans-serif;
 	border-radius:200px;
 	background:#3333DD;
 	color:#FAFAFA;
@@ -9,6 +8,7 @@
 
 body
 {
+	font: 100% verdana, arial, sans-serif;
 	background: #FDDD60;
 	margin: 50px;
 	color:#3333DD;
