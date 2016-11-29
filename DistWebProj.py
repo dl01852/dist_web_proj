@@ -54,31 +54,30 @@ def gpu_page():
     from objects import GPU
     return render_template('productTemplate.html', table=GPU)
 
+@app.route('/Coolers')
+def cooler_page():
+    from objects import Cooler
+    return render_template('productTemplate.html', table=Cooler)
+
+@app.route('/HardDrives')
+def hardDive_page():
+    from objects import HardDrive
+    return  render_template('productTemplate.html',table=HardDrive)
+
+@app.route('/SSDs')
+def ssd_page():
+    from objects import SSD
+    return render_template('productTemplate.html',table=SSD)
+
+@app.route('/Towers')
+def tower_page():
+    from objects import Tower
+    return render_template('productTemplate.html', table=Tower)
+
 @app.route('/cart')
 def cart_page():
     return render_template('CartPage.html')
 
-
-
-#@app.route('/HardDrives')
-#def hardDrive_page():
-#    return render_template('HardDrivePage.html')
-
-#@app.route('/Cases')
-#def cases_page():
-#   return render_template('CasesPage.html')
-
-#@app.route('/SSDs')
-#def ssds_page():
-#   return render_template('SSDPage.html')
-
-#@app.route('/Coolers')
-#def cooler_page():
-#   return render_template('CoolersPage.html')
-
-#@app.route('/OperatingSystems')
-#def os_page():
-#   return render_template('OSPage.html')
 
 
 

@@ -29,16 +29,18 @@ class Powersupply(database.Model):
     model = database.Column(database.VARCHAR, nullable=True)
     maxpower= database.Column(database.VARCHAR, nullable=True)
     dimensions = database.Column(database.VARCHAR, nullable=True)
+    price = database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self,img, brand, model, maxpower, dimensions):
+    def __init__(self,img, brand, model, maxpower, dimensions,price):
         self.img=img
         self.brand = brand
         self.model = model
         self.maxpower = maxpower
         self.dimensions = dimensions
+        self.price=price
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s" % (self.img,self.brand, self.model, self.maxpower, self.dimensions)
+        return "%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand, self.model, self.maxpower, self.dimensions,self.price)
 
     @staticmethod
     def columns():
@@ -56,9 +58,10 @@ class Ram(database.Model):
     speed = database.Column(database.VARCHAR, nullable=True)
     voltage = database.Column(database.VARCHAR, nullable=True)
     notes = database.Column(database.VARCHAR, nullable=True)
+    prices= database.Column(database.VARCHAR, nullable=True)
 
 
-    def __init__(self,img, model,size,type,speed,voltage,notes):
+    def __init__(self,img, model,size,type,speed,voltage,notes, price):
         self.model = model
         self.size=size
         self.type = type
@@ -66,13 +69,14 @@ class Ram(database.Model):
         self.voltage = voltage
         self.notes = notes
         self.img = img
+        self.price=price
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.size,self.model,self.type,self.speed,self.voltage,self.notes)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.size,self.model,self.type,self.speed,self.voltage,self.notes, self.price)
 
     @staticmethod
     def columns():
-        return ["Size","Model","Type","Speed","Voltage","Notes"]
+        return ["Size","Model","Type","Speed","Voltage","Notes","Price"]
 
 class CPU(database.Model):
 
@@ -86,8 +90,10 @@ class CPU(database.Model):
     socket = database.Column(database.VARCHAR, nullable=True)
     operatingfrequency = database.Column(database.VARCHAR, nullable=True)
     thermaldesignpower = database.Column(database.VARCHAR, nullable=True)
+    price=database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self,img,brand,type,model,socket,operatingfrequency,thermaldesignpower):
+
+    def __init__(self,img,brand,type,model,socket,operatingfrequency,thermaldesignpower, price):
         self.img=img
         self.brand = brand
         self.type = type
@@ -95,13 +101,14 @@ class CPU(database.Model):
         self.socket = socket
         self.operatingfrequency = operatingfrequency
         self.thermaldesignpoower = thermaldesignpower
+        self.price=price
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s" %(self.img,self.brand,self.type,self.model,self.socket,self.operatingfrequency,self.thermaldesignpower)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" %(self.img,self.brand,self.type,self.model,self.socket,self.operatingfrequency,self.thermaldesignpower, self.price)
 
     @staticmethod
     def columns():
-        return ["Brand","Type","Mode","Socket","Operating Frequency","Thermal Design Power"]
+        return ["Brand","Type","Mode","Socket","Operating Frequency","Thermal Design Power","Price"]
 class GPU(database.Model):
 
     __tablename__ = 'gpu'
@@ -115,8 +122,9 @@ class GPU(database.Model):
     type = database.Column(database.VARCHAR, nullable=True)
     size = database.Column(database.VARCHAR, nullable=True)
     memorytype = database.Column(database.VARCHAR, nullable=True)
+    price = database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self,img,brand,model,interface,manufacturer,type,size,memorytype):
+    def __init__(self,img,brand,model,interface,manufacturer,type,size,memorytype, price):
         self.img=img
         self.brand = brand
         self.model = model
@@ -125,13 +133,14 @@ class GPU(database.Model):
         self.type = type
         self.size = size
         self.memorytype = memorytype
+        self.price=price
 
     def __repr__(self):
-        return  "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand,self.model,self.interface,self.manufacturer,self.type,self.size,self.memorytype)
+        return  "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand,self.model,self.interface,self.manufacturer,self.type,self.size,self.memorytype, self.price)
 
     @staticmethod
     def columns():
-        return ["Brand","Model","Interface","Manufacturer","Type","Size","Memory Type"]
+        return ["Brand","Model","Interface","Manufacturer","Type","Size","Memory Type","Price"]
 
 
 class MotherBoard(database.Model):
@@ -145,22 +154,170 @@ class MotherBoard(database.Model):
     supportedsocket = database.Column(database.VARCHAR, nullable=True)
     supportedcpu = database.Column(database.VARCHAR, nullable=True)
     expansionslots = database.Column(database.VARCHAR, nullable=True)
+    price = database.Column(database.VARCHAR, nullable=True)
 
 
-    def __init__(self,img,brand,model,supportedsocket,supportedcpu,expansionslots):
+    def __init__(self,img,brand,model,supportedsocket,supportedcpu,expansionslots,price):
         self.img=img
         self.brand = brand
         self.model = model
         self.supportedsocket = supportedsocket
         self.supportedcpu = supportedcpu
         self.expansionslots = expansionslots
+        self.price=price
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand,self.model,self.supportedsocket,self.supportedcpu,self.expansionslots)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand,self.model,self.supportedsocket,self.supportedcpu,self.expansionslots,self.price)
 
     @staticmethod
     def columns():
-        return ["Brand","Model","Supported Socket","Supported CPU", "Expansion Slots"]
+        return ["Brand","Model","Supported Socket","Supported CPU", "Expansion Slots","Price"]
+
+class Tower(database.Model):
+
+    __tablename__ = 'tower'
+
+    id= database.Column(database.INTEGER,primary_key=True)
+    img = database.Column(database.VARCHAR, nullable=True)
+    brand = database.Column(database.VARCHAR, nullable=True)
+    model = database.Column(database.VARCHAR, nullable=True)
+    type = database.Column(database.VARCHAR, nullable=True)
+    compatibility = database.Column(database.VARCHAR, nullable=True)
+    expansionSlots = database.Column(database.VARCHAR, nullable=True)
+    gpuSupport = database.Column(database.VARCHAR, nullable=True)
+    dimensions = database.Column(database.VARCHAR, nullable=True)
+    weight = database.Column(database.VARCHAR, nullable=True)
+    price = database.Column(database.VARCHAR, nullable=True)
+
+    def __init__(self, img, brand, model, type, compatibility, expansionSlots, gpuSupport, dimensions, weight, price):
+        self.img=img
+        self.brand=brand
+        self.model=model
+        self.type=type
+        self.compatibility=compatibility
+        self.expansionSlots=expansionSlots
+        self.gpuSupport=gpuSupport
+        self.dimensions=dimensions
+        self.weight=weight
+        self.price=price
+
+    def __repr__(self):
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img, self.brand, self.model,self.type, self.compatibility, self.expansionSlots, self.gpuSupport, self.dimensions, self.weight, self.price)
+
+
+    @staticmethod
+    def columns():
+        return ["Brand", "Model", "Type", "Compatibility", "ExpansionSlots", "GpuSupport", "Dimensions", "Weight", "Price"]
+
+class HardDrive(database.Model):
+
+    __tablename__='harddrive'
+
+    id=database.Column(database.INTEGER,primary_key=True)
+    img= database.Column(database.VARCHAR, nullable=True)
+    brand= database.Column(database.VARCHAR, nullable=True)
+    series= database.Column(database.VARCHAR, nullable=True)
+    model= database.Column(database.VARCHAR, nullable=True)
+    interface= database.Column(database.VARCHAR, nullable=True)
+    capacity= database.Column(database.VARCHAR, nullable=True)
+    rpm= database.Column(database.VARCHAR, nullable=True)
+    dimensions= database.Column(database.VARCHAR, nullable=True)
+    features= database.Column(database.VARCHAR, nullable=True)
+    price= database.Column(database.VARCHAR, nullable=True)
+
+    def __init__(self, img, brand, series, model, interface, capacity, rpm, dimensions, features, price):
+        self.img=img
+        self.brand=brand
+        self.series=series
+        self.model=model
+        self.interface=interface
+        self.capacity=capacity
+        self.rpm=rpm
+        self.dimensions=dimensions
+        self.features=features
+        self.price=price
+
+    def __repr__(self):
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img,self.brand,self.series,self.model,self.interface,self.capacity,self.rpm,self.dimensions,self.features,self.price)
+
+    @staticmethod
+    def columns():
+        return ["Brand","Series","Model","Interface","Capacity","RPM","Dimensions","Features","Price"]
+
+class SSD(database.Model):
+
+    __tablename__='ssd'
+
+    id=database.Column(database.INTEGER,primary_key=True)
+    img= database.Column(database.VARCHAR, nullable=True)
+    brand= database.Column(database.VARCHAR, nullable=True)
+    series= database.Column(database.VARCHAR, nullable=True)
+    model= database.Column(database.VARCHAR, nullable=True)
+    capacity= database.Column(database.VARCHAR, nullable=True)
+    interface= database.Column(database.VARCHAR, nullable=True)
+    controller= database.Column(database.VARCHAR, nullable=True)
+    speed= database.Column(database.VARCHAR, nullable=True)
+    features= database.Column(database.VARCHAR, nullable=True)
+    powerconsume= database.Column(database.VARCHAR, nullable=True)
+    dimensions= database.Column(database.VARCHAR, nullable=True)
+    price= database.Column(database.VARCHAR, nullable=True)
+
+    def __init__(self, img, brand, series, model, capacity, interface, controller, speed, features, powerconsume, dimensions, price):
+        self.img=img
+        self.brand=brand
+        self.series=series
+        self.model=model
+        self.capacity=capacity
+        self.interface=interface
+        self.controller=controller
+        self.speed=speed
+        self.features=features
+        self.powerconsume=powerconsume
+        self.dimensions=dimensions
+        self.price=price
+
+    def __repr__(self):
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img, self.brand, self.series, self.model, self.capacity, self.interface, self.controller, self.speed, self.features, self.powerconsume, self.dimensions, self.price)
+
+    @staticmethod
+    def columns():
+        return ["Brand","Series","Model","Capacity","Interface","Controller","Speed","Features","PowerConsumption","Dimensions","Price"]
+
+class Cooler(database.Model):
+
+    __tablename__='cooler'
+
+
+    id=database.Column(database.INTEGER,primary_key=True)
+    img= database.Column(database.VARCHAR, nullable=True)
+    brand= database.Column(database.VARCHAR, nullable=True)
+    series= database.Column(database.VARCHAR, nullable=True)
+    model= database.Column(database.VARCHAR, nullable=True)
+    type= database.Column(database.VARCHAR, nullable=True)
+    compatibility= database.Column(database.VARCHAR, nullable=True)
+    connector= database.Column(database.VARCHAR, nullable=True)
+    sinkDimensions= database.Column(database.VARCHAR, nullable=True)
+    features= database.Column(database.VARCHAR, nullable=True)
+    price= database.Column(database.VARCHAR, nullable=True)
+
+    def __init__(self,img,brand,series,model,type,compatibility,connector,sinkDimensions,features,price):
+        self.img = img
+        self.brand = brand
+        self.series = series
+        self.model = model
+        self.type=type
+        self.compatibility=compatibility
+        self.connector=connector
+        self.sinkDimensions=sinkDimensions
+        self.features=features
+        self.price=price
+
+    def __repr__(self):
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img, self.brand, self.series, self.model, self.type, self.compatibility, self.connector, self.sinkDimensions, self.features, self.price)
+
+    @staticmethod
+    def columns():
+        return ["Brand","Series","Model","Type","Compatibility","Connector","Sink Dimensions","Features" "Price"]
 
 
 
