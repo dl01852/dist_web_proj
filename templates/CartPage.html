@@ -8,10 +8,12 @@
         <script type="text/javascript">
             function loadTable()
             {
-                if(true)//Make call to database to see if items exist in cart
+                arguments.callee.preventAdditional; //only one table or message will be generated
+
+                var location = document.getElementsByClassName('cart_content')[0];
+                if(true && !arguments.callee.preventAdditional)//Make call to database to see if items exist in cart
                 {
                     //setup of table
-                    var location = document.getElementsByClassName('cart_content')[0];
                     var t = document.createElement("table");
                     t.style.width='100%';
                     t.setAttribute('border','1');
@@ -53,11 +55,15 @@
                     t.appendChild(tHead);
                     t.appendChild(tBody);
                     location.appendChild(t);
+                    arguments.callee.preventAdditional = true;
                 }
 
-                else
+                else if(!arguments.callee.preventAdditional)
                 {
-
+                    var h = document.createElement("h2");
+                    h.innerHTML = "There are no items in your cart!";
+                    location.appendChild(h);
+                    arguments.callee.preventAdditional = true;
                 }
             }
         </script>
