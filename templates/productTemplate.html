@@ -29,7 +29,7 @@
          </tr>
          {% for entry in table.query.all()%}
          <tr>
-         <td><img src={{(entry|string()).split()[0]}} width = "100px" height = "100px"></td>
+         <td><img src={{(entry|string()).split()[0]}} style="width:100px;height:100px"></td>
              {% for piece in (entry|string()).split("\t")[1:] %}
              <td>{{ piece }}</td>
              {%  endfor %}
