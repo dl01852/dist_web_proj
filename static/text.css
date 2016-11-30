@@ -11,12 +11,24 @@ body
     margin:10px auto;
 }
 
+#tabnav
+{
+    position: absolute;
+}
+
 .tab
 {
     display:inline;
 }
 
-
+a.link
+{ /* settings for all tab links */
+    padding: 3px 4px;
+    border: 1px solid #DAA520; /* tabborder color */
+    background-color:	#000080 ; /* tab background */
+    color: #fff; /* tab font color */
+    text-decoration: none;
+}
 
 #banner
 {
