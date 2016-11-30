@@ -20,8 +20,6 @@ class UserAccount(database.Model):
         return "%s:%s" % (self.username, self.password)
 
 
-
-
 class Powersupply(database.Model):
 
     __tablename__ = 'powersupply'
@@ -193,15 +191,17 @@ class HardDrive(database.Model):
     id=database.Column(database.INTEGER,primary_key=True)
     img= database.Column(database.VARCHAR, nullable=True)
     brand= database.Column(database.VARCHAR, nullable=True)
+    #series= database.Column(database.VARCHAR, nullable=True)
     model= database.Column(database.VARCHAR, nullable=True)
     interface= database.Column(database.VARCHAR, nullable=True)
     capacity= database.Column(database.VARCHAR, nullable=True)
     rpm= database.Column(database.VARCHAR, nullable=True)
+    #dimensions= database.Column(database.VARCHAR, nullable=True)
     features= database.Column(database.VARCHAR, nullable=True)
     price= database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self, img, brand, model, interface, capacity, rpm, features, price):
-
+    def __init__(self, id, img, brand, model, interface, capacity, rpm, features, price):
+        self.id = id
         self.img=img
         self.brand=brand
         self.model=model
@@ -212,26 +212,26 @@ class HardDrive(database.Model):
         self.price=price
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand,self.model,self.interface,self.capacity,self.rpm,self.features,self.price)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img,self.brand,self.model,self.interface,self.capacity,self.rpm,self.features,self.price)
 
     @staticmethod
     def columns():
         return ["Brand","Model","Interface","Capacity","RPM","Features","Price"]
 
-
 class Cart(database.Model):
     __tablename__ = 'cart'
 
     id = database.Column(database.Integer, primary_key=True)
-    userid = database.Column(database.Integer, ForeignKey(UserAccount.id), nullable=True)
-    gpuid = database.Column(database.Integer, ForeignKey(GPU.id), nullable=True)
-    cpuid = database.Column(database.Integer, ForeignKey(CPU.id), nullable=True)
-    powersupplyid = database.Column(database.Integer, ForeignKey(Powersupply.id), nullable=True)
-    ramid = database.Column(database.Integer, ForeignKey(Ram.id),nullable=True)
-    motherboardid = database.Column(database.Integer, ForeignKey(MotherBoard.id), nullable=True)
-    harddriveid = database.Column(database.Integer, ForeignKey(HardDrive.id), nullable=True)
+    userid = database.Column(database.Integer, ForeignKey('useraccount.id'), nullable=True)
+    gpuid = database.Column(database.Integer, ForeignKey('gpu.id'), nullable=True)
+    cpuid = database.Column(database.Integer, ForeignKey('cpu.id'), nullable=True)
+    powersupplyid = database.Column(database.Integer, ForeignKey('powersupply.id'), nullable=True)
+    ramid = database.Column(database.Integer, ForeignKey('ram.id'),nullable=True)
+    motherboardid = database.Column(database.Integer, ForeignKey('motherboard.id'), nullable=True)
+    harddriveid = database.Column(database.Integer, ForeignKey('harddrive.id'), nullable=True)
 
-    def __init__(self, userid, gpuid, cpuid, powersupplyid, ramid, motherboardid, harddriveid):
+    def __init__(self, id, userid, gpuid, cpuid, powersupplyid, ramid, motherboardid, harddriveid):
+        self.id = id
         self.userid = userid
         self.gpuid = gpuid
         self.cpuid = cpuid
@@ -242,13 +242,11 @@ class Cart(database.Model):
 
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.userid,self.gpuid, self.cpuid, self.powersupplyid, self.ramid, self.motherboardid, self.harddriveid)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.userid, self.gpuid,self.cpuid,self.powersupplyid,self.ramid,self.motherboardid,self.harddriveid)
 
     @staticmethod
     def columns():
-        return["GPU","CPU","Power Supply","RAM","Mother Board", "Hard Drive"]
-
-
+        return ["userid", "gpuid", "cpuid", "powersupplyid", "ramid", "motherboardid", "harddriveid"]
     # class Cart(database.Model):
     #     __tablename__ = 'cart'
     #
