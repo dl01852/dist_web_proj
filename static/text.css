@@ -5,51 +5,12 @@ body
     margin: 50px;
 }
 
-/* begin css tabs */
-
-#tabs
-{
-    font: bold 12px verdana, arial, sans-serif; /* set font as desired */
-    width:50%;
-    margin: 0px auto;
-}
-
-ul#tabnav
-{ /* do not change */
-    padding-bottom:5px;
-    border-bottom: 2px solid #DAA520; /* line color*/
-}
-
 .tab
-{ /* settings for selected tab */
-    display: inline;
-    margin: 0px auto;
+{
+    display:inline;
 }
 
-a.link:link
-{ /* settings for selected tab link */
-    background-color: #fff; /* set selected tab background color as desired */
-    color: #000; /* set selected tab link color as desired */
-    position: relative;
-    top: 1px;
-    padding: 4px 0px;
-}
 
-a.link
-{ /* settings for all tab links */
-    padding: 3px 4px;
-    border: 1px solid #DAA520; /* tabborder color */
-    background-color:	#000080 ; /* tab background */
-    color: #fff; /* tab font color */
-    margin-right: 0px;
-    text-decoration: none;
-    border-bottom: none;
-}
-
-a.link:hover
-{ /* settings for hover effect */
-    background:#bbf; /* set desired hover color */
-}
 
 #banner
 {
