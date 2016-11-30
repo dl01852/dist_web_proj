@@ -7,8 +7,7 @@ app = Flask(__name__)
 # database URL format = databaseType://username:password@endpoint:port/DatabaseName
 # note: username and password is taken out for secure purposes. gotta figure out how to do environmental variables.
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://dlewis:password@distweb.c7b6ayuxu8b8.us-east-2.rds.amazonaws.com:5432/distWebDB'
-
-
+app.secret_key = "abcdef"
 database = SQLAlchemy(app)
 
 @app.route('/',methods=['GET','POST'])
