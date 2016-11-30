@@ -123,7 +123,6 @@ def hardDive_page():
 
 @app.route('/cart')
 def cart_page():
-    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
     return render_template('CartPage.html')
 
 
