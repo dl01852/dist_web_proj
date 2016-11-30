@@ -1,12 +1,24 @@
 body
 {
     background-color: #FDDD60;
+    font: 100% verdana, arial, sans-serif;
 }
 
 h1
 {
     font-size:32pt;
      color: blue;
+}
+
+div.header
+{
+    margin:10px;
+    padding:10px;
+}
+
+div.checkout
+{
+    padding:20px;
 }
 
 a.home_link
