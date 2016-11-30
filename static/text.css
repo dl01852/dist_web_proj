@@ -17,7 +17,7 @@ body
 ul#tabnav
 { /* do not change */
     margin-bottom:4px;
-    border-bottom: 1px solid #DAA520; /* line color*/
+    border-bottom: 4px solid #DAA520; /* line color*/
 }
 
 .tab
