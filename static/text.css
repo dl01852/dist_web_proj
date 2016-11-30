@@ -5,6 +5,12 @@ body
     margin: 50px;
 }
 
+#tabs
+{
+    width:50%;
+    margin:10px auto;
+}
+
 .tab
 {
     display:inline;
