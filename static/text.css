@@ -17,7 +17,7 @@ body
 {
     font: bold 12px verdana, arial, sans-serif; /* set font as desired */
     width:50%;
-    margin: 0px auto;
+    margin: 10px auto;
 }
 
 #tabnav
@@ -29,7 +29,7 @@ body
 .tab
 { /* settings for selected tab */
     display: inline;
-    margin: 0px auto;
+    margin: 0px 10%;
 }
 
 a.link:link
