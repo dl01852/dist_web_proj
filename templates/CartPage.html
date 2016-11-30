@@ -107,7 +107,7 @@
 
                 {% for entry in items.query.filter_by(userid=1) %}
          <tr>
-             {% for piece in (entry|string()).split("\t")[1:] %}
+             {% for piece in (entry|string()).split("\t")[:] %}
                  {% if piece  %}
                     <td>{{ piece }}</td>
                  {% endif %}
