@@ -16,7 +16,7 @@ body
 ul#tabnav
 { /* general settings */
     text-align: left; /* set to left, right or center */
-    margin: 1em 0 1em 0; /* set margins as desired */
+    margin: 1em auto; /* set margins as desired */
     font: bold 12px verdana, arial, sans-serif; /* set font as desired */
     border-bottom: 1px solid #DAA520; /* line color*/
     list-style-type: none;
@@ -32,6 +32,7 @@ ul#tabnav li
 { /* settings for selected tab */
     border-bottom: 1px solid #fff; /* set border color to page background color */
     background-color: #fff; /* set background color to match above border color */
+    margin: 0px auto;
 }
 
 .link
