@@ -30,8 +30,7 @@
 
             <div class="item1">
                 {% for table in db.query.all() %}
-                    {% n = range(0,5) | random() %}
-                    <p>{{ n }}</p>
+                    <p>{{ range(0,5) | random }}</p>
                 {% endfor %}
                 <h2><img class="featured_icon" src="http://images.bit-tech.net/content_images/2015/05/nvidia-geforce-gtx-980-ti-review/980ti-1b.jpg">GeForce GTX 980 Ti</h2>
                 <p>Description here</p>
