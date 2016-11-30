@@ -80,23 +80,27 @@ def test():
 @app.route('/RAM')
 def ram_page():
     from objects import Ram
-    return render_template('productTemplate.html', table=Ram)
+    username = session['username']
+    return render_template('productTemplate.html', table=Ram,username=username)
 
 @app.route('/CPUs')
 def cpu_page():
     from objects import CPU
-    return render_template('productTemplate.html', table=CPU)
+    username = session['username']
+    return render_template('productTemplate.html', table=CPU,username=username)
 
 
 @app.route('/PSUs')
 def psu_page():
     from objects import Powersupply
-    return render_template('productTemplate.html', table=Powersupply)
+    username = session['username']
+    return render_template('productTemplate.html', table=Powersupply, username=username)
 
 @app.route('/VideoCards')
 def gpu_page():
     from objects import GPU, UserAccount
-    return render_template('productTemplate.html', table=GPU)
+    username = session['username']
+    return render_template('productTemplate.html', table=GPU,username=username)
 
 
 # @app.route('/Coolers')
@@ -108,7 +112,8 @@ def gpu_page():
 def hardDive_page():
 
     from objects import HardDrive, UserAccount
-    return  render_template('productTemplate.html',table=HardDrive)
+    username = session['username']
+    return  render_template('productTemplate.html',table=HardDrive,username=username)
 
 # @app.route('/SSDs')
 # def ssd_page():
@@ -123,8 +128,6 @@ def hardDive_page():
 @app.route('/cart')
 def cart_page():
     return render_template('CartPage.html')
-
-
 
 
 
