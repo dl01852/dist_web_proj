@@ -60,7 +60,6 @@ def post_user():
 
 @app.route('/products')
 def products_page():
-    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
     return render_template('ProductsPage.html')
 
 @app.route('/thankyou')
