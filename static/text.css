@@ -15,23 +15,20 @@ body
 
 ul#tabnav
 { /* general settings */
-    text-align: left; /* set to left, right or center */
-    margin: 1em auto; /* set margins as desired */
     font: bold 12px verdana, arial, sans-serif; /* set font as desired */
     border-bottom: 1px solid #DAA520; /* line color*/
     list-style-type: none;
-    padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
+    padding: 3px 10px;
 }
 
 ul#tabnav li
 { /* do not change */
     display: inline;
+    margin: 1em auto; /* set margins as desired */
 }
 
 .tab
 { /* settings for selected tab */
-    border-bottom: 1px solid #fff; /* set border color to page background color */
-    background-color: #fff; /* set background color to match above border color */
     margin: 0px auto;
 }
 
@@ -41,7 +38,7 @@ ul#tabnav li
     color: #000; /* set selected tab link color as desired */
     position: relative;
     top: 1px;
-    padding-top: 4px; /* must change with respect to padding (X) above and below */
+    padding: 4px 0px;
 }
 
 ul#tabnav li a
