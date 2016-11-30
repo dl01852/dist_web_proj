@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+import webbrowser
 
 
 app = Flask(__name__)
@@ -59,6 +60,7 @@ def post_user():
 
 @app.route('/products')
 def products_page():
+    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
     return render_template('ProductsPage.html')
 
 @app.route('/thankyou')
@@ -68,17 +70,25 @@ def thankyou_page():
 @app.route('/motherboards')
 def mobo_page():
     from objects import MotherBoard
+    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
     return render_template('productTemplate.html', table=MotherBoard)
 
+
+@app.route('/test')
+def test():
+    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
+    return render_template('productTemplate.html')
 
 @app.route('/RAM')
 def ram_page():
     from objects import Ram
+    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
     return render_template('productTemplate.html', table=Ram)
 
 @app.route('/CPUs')
 def cpu_page():
     from objects import CPU
+    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
     return render_template('productTemplate.html', table=CPU)
 
 
@@ -90,6 +100,7 @@ def psu_page():
 @app.route('/VideoCards')
 def gpu_page():
     from objects import GPU, UserAccount
+    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
     return render_template('productTemplate.html', table=GPU)
 
 
@@ -100,7 +111,9 @@ def gpu_page():
 
 @app.route('/HardDrives')
 def hardDive_page():
+
     from objects import HardDrive, UserAccount
+    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
     return  render_template('productTemplate.html',table=HardDrive)
 
 # @app.route('/SSDs')
@@ -115,6 +128,7 @@ def hardDive_page():
 
 @app.route('/cart')
 def cart_page():
+    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
     return render_template('CartPage.html')
 
 
