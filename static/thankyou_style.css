@@ -1,0 +1,30 @@
+body
+{
+    background-color: #FDDD60;
+}
+
+h1
+{
+    font-size:32pt;
+    color: blue;
+    text-align: center;
+}
+
+h2
+{
+    font-size:16pt;
+    color: blue;
+    text-align: center;
+}
+
+div.thankyou
+{
+    margin:5px;
+    padding:20px;
+}
+
+div.featured_content
+{
+    margin:5px;
+    padding:20px;
+}

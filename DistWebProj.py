@@ -22,10 +22,13 @@ def post_user():
     database.session.commit() # run the actual sql command.
     return redirect(url_for('add_user')) # rever the user back to the  create user form.
 
-
 @app.route('/products')
 def products_page():
     return render_template('ProductsPage.html')
+
+@app.route('/thankyou')
+def thankyou_page():
+    return render_template('ThankyouPage.html')
 
 @app.route('/motherboards')
 def mobo_page():

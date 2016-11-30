@@ -8,8 +8,9 @@
 
 body
 {
+	font: 100% verdana, arial, sans-serif;
 	background: #FDDD60;
-
+	margin: 50px;
 	color:#3333DD;
 }
 
@@ -33,7 +34,6 @@ div.header img
 div.banner img
 {
 	width:100%;
-	height:200px;
 }
 
 div.featured_content

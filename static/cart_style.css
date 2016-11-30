@@ -1,12 +1,24 @@
-body {
+body
+{
     background-color: #FDDD60;
+    font: 100% verdana, arial, sans-serif;
 }
 
-
-
-h1{
+h1
+{
     font-size:32pt;
      color: blue;
+}
+
+div.header
+{
+    margin:10px;
+    padding:10px;
+}
+
+div.checkout
+{
+    padding:20px;
 }
 
 a.home_link
@@ -27,4 +39,32 @@ a.home_link:hover
 a.home_link:visited
 {
     color:blue;
+}
+
+table.cart_table
+{
+    margin:auto;
+    background:#FAFAFA;
+    color:#000040;
+    border: 1px solid #666;
+    border-collapse: collapse;
+}
+
+table.cart_table th
+{
+    font-size: 24px;
+    background: #99F;
+    padding:20px;
+}
+
+table.cart_table td
+{
+    font-size: 16px;
+    padding:15px;
+
+}
+
+table.cart_table tr:hover
+{
+    background-color:#eef;
 }
