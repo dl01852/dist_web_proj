@@ -229,17 +229,24 @@ class Cart(database.Model):
     powersupplyid = database.Column(database.Integer, ForeignKey(Powersupply.id), nullable=True)
     ramid = database.Column(database.Integer, ForeignKey(Ram.id),nullable=True)
     motherboardid = database.Column(database.Integer, ForeignKey(MotherBoard.id), nullable=True)
-    #harddriveid = database.Column(database.Integer, ForeignKey(HardDrive.id), nullable=True)
+    harddriveid = database.Column(database.Integer, ForeignKey(HardDrive.id), nullable=True)
 
-    def __init__(self, id, userid, gpuid, cpuid, powersupplyid, ramid, motherboardid, harddriveid):
-        self.id = id
+    def __init__(self, userid, gpuid, cpuid, powersupplyid, ramid, motherboardid, harddriveid):
         self.userid = userid
         self.gpuid = gpuid
         self.cpuid = cpuid
         self.powersupplyid = powersupplyid
         self.ramid = ramid
         self.motherboardid = motherboardid
-        #self.harddriveid = harddriveid
+        self.harddriveid = harddriveid
+
+
+    def __repr__(self):
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.userid,self.gpuid, self.cpuid, self.powersupplyid, self.ramid, self.motherboardid, self.harddriveid)
+
+    @staticmethod
+    def columns():
+        return["GPU","CPU","Power Supply","RAM","Mother Board", "Hard Drive"]
 
 
     # class Cart(database.Model):
