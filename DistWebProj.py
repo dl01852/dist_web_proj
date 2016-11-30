@@ -7,6 +7,7 @@ app = Flask(__name__)
 # note: username and password is taken out for secure purposes. gotta figure out how to do environmental variables.
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://dlewis:password@distweb.c7b6ayuxu8b8.us-east-2.rds.amazonaws.com:5432/distWebDB'
 
+
 database = SQLAlchemy(app)
 
 @app.route('/')
@@ -54,28 +55,29 @@ def psu_page():
 
 @app.route('/VideoCards')
 def gpu_page():
-    from objects import GPU
+    from objects import GPU, User
     return render_template('productTemplate.html', table=GPU)
 
-@app.route('/Coolers')
-def cooler_page():
-    from objects import Cooler
-    return render_template('productTemplate.html', table=Cooler)
+
+# @app.route('/Coolers')
+# def cooler_page():
+#     from objects import Cooler
+#     return render_template('productTemplate.html', table=Cooler)
 
 @app.route('/HardDrives')
 def hardDive_page():
-    from objects import HardDrive
+    from objects import HardDrive, User
     return  render_template('productTemplate.html',table=HardDrive)
 
-@app.route('/SSDs')
-def ssd_page():
-    from objects import SSD
-    return render_template('productTemplate.html',table=SSD)
+# @app.route('/SSDs')
+# def ssd_page():
+#     from objects import SSD
+#     return render_template('productTemplate.html',table=SSD)
 
-@app.route('/Towers')
-def tower_page():
-    from objects import Tower
-    return render_template('productTemplate.html', table=Tower)
+# @app.route('/Towers')
+# def tower_page():
+#     from objects import Tower
+#     return render_template('productTemplate.html', table=Tower)
 
 @app.route('/cart')
 def cart_page():
