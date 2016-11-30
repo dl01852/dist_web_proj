@@ -28,7 +28,11 @@ a.link
     background-color:	#000080 ; /* tab background */
     color: #fff; /* tab font color */
     text-decoration: none;
-    margin:1em 2em;
+}
+
+a.link:hover
+{ /* settings for hover effect */
+    background:#bbf; /* set desired hover color */
 }
 
 #banner
