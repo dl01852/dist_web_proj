@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import webbrowser
 
@@ -27,8 +27,7 @@ def add_user():
                 if user == None or user.password != password:
                     login_error = "username or password is incorrect"
                 else:
-                    session['username'] = username
-                    return render_template('ProductsPage.html',username=username)
+                    return render_template('HomePage.html',username=username)
         elif 'register' in request.form:
             username = request.form['username']
             password = request.form['password']
@@ -69,8 +68,7 @@ def thankyou_page():
 @app.route('/motherboards')
 def mobo_page():
     from objects import MotherBoard
-    username = session['username']
-    return render_template('productTemplate.html', table=MotherBoard,username=username)
+    return render_template('productTemplate.html', table=MotherBoard)
 
 
 @app.route('/test')
@@ -108,6 +106,7 @@ def gpu_page():
 def hardDive_page():
 
     from objects import HardDrive, UserAccount
+    
     return  render_template('productTemplate.html',table=HardDrive)
 
 # @app.route('/SSDs')
@@ -122,6 +121,7 @@ def hardDive_page():
 
 @app.route('/cart')
 def cart_page():
+    webbrowser.open('https://www.youtube.com/watch?v=eIri9YLHpOg')
     return render_template('CartPage.html')
 
 
