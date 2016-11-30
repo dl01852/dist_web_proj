@@ -10,9 +10,25 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://dlewis:password@distweb.c7
 
 database = SQLAlchemy(app)
 
-@app.route('/')
+@app.route('/',methods=['GET','POST'])
 def add_user():
-    return render_template('LoginPage.html')
+    error = None
+    if request.method == 'POST':
+        if 'login' in request.form:
+            return '<h1> LOGGED IN!!! </h1>'
+        elif 'register' in request.form:
+            return '<h1> REGISTERED!!</h1>'
+    # error = None
+    # if request.method == 'POST':
+    #     if 'login' in request.form:
+    #         username = request.form['username']
+    #         password = request.form['password']
+    #         if username or username.strip() or password or password.strip():
+    #             error = "Please fill in both fields!"
+    #     elif 'register' in request.form:
+    #         return '<h1> REGISTERED </h1>'
+    #     else
+    return render_template('LoginPage.html',error=error)
 
 @app.route('/home')
 def home_page():
