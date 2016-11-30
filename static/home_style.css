@@ -1,6 +1,7 @@
 #border1
 {
 	border-radius:200px;
+	border-style: outset;
 	background:#3333DD;
 	color:#FAFAFA;
 	padding:50px;
@@ -51,6 +52,7 @@ div.header img
 div.banner img
 {
 	width:100%;
+	border-style: groove;
 }
 
 div.user_area

@@ -7,13 +7,15 @@
 body
 {
     font: 100% verdana, arial, sans-serif;
-    background-color:#FDDD60 ;
-    margin: 50px;
+    background:#FDDD60;
+    background: linear-gradient(#FDDD60,#FFB 400px,#FDDD60);
+    /*background: linear-gradient(to right, rgba(250,210,99,1),rgba(250,210,99,.4));*/
+    margin: 4%;
 }
 
 #user_text
 {
-   float:right;
+    float:right;
     margin:10px 5px;
     color:#000080;
 }
@@ -66,6 +68,7 @@ a.link:hover
 #banner
 {
     width: 100%;
+    border-style: groove;
 }
 
 h1
@@ -92,7 +95,9 @@ h3
 #border1
 {
 	border-radius:200px;
+    border-style: outset;
 	background:#3333DD;
+    background: linear-gradient(to bottom right, #DDF 5%, rgba(60,60,230,1),#DDF 95%);
 	color:#FAFAFA;
 	padding:50px;
 }
