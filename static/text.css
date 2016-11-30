@@ -12,11 +12,11 @@ body
     font: bold 12px verdana, arial, sans-serif; /* set font as desired */
     width:50%;
     margin: 0px auto;
-    border-bottom: 1px solid #DAA520; /* line color*/
 }
 
-ul#tabnav li
+ul#tabnav
 { /* do not change */
+    border-bottom: 1px solid #DAA520; /* line color*/
     display: inline;
     margin: 1em auto; /* set margins as desired */
 }
@@ -26,7 +26,7 @@ ul#tabnav li
     margin: 0px auto;
 }
 
-.link:link
+a.link:link
 { /* settings for selected tab link */
     background-color: #fff; /* set selected tab background color as desired */
     color: #000; /* set selected tab link color as desired */
@@ -35,7 +35,7 @@ ul#tabnav li
     padding: 4px 0px;
 }
 
-ul#tabnav li a
+a.link
 { /* settings for all tab links */
     padding: 3px 4px;
     border: 1px solid #DAA520; /* tabborder color */
@@ -46,9 +46,9 @@ ul#tabnav li a
     border-bottom: none;
 }
 
-ul#tabnav a:hover
+a.link:hover
 { /* settings for hover effect */
-    background:#fff; /* set desired hover color */
+    background:#bbf; /* set desired hover color */
 }
 
 #banner
