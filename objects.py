@@ -218,6 +218,7 @@ class HardDrive(database.Model):
     def columns():
         return ["Brand","Model","Interface","Capacity","RPM","Features","Price"]
 
+
 class Cart(database.Model):
     __tablename__ = 'cart'
 
