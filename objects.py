@@ -1,8 +1,6 @@
 from DistWebProj import database
 from sqlalchemy import ForeignKey
-import webbrowser
-
-
+from sqlalchemy.sql import select
 
 
 class UserAccount(database.Model):
@@ -46,6 +44,9 @@ class Cart(database.Model):
     def __repr__(self):
         return "%s\t%s\t%s\t%s\t%s\t%s\t" % (self.gpuid, self.cpuid, self.powersupplyid, self.ram_id, self.motherboardid, self.harddrive_id)
 
+
+
+
     @staticmethod
     def columns():
         return["GPU","CPU","PowerSupply","RAM","Motherboard","Hard Drive"]
@@ -71,12 +72,12 @@ class Powersupply(database.Model):
         self.dimensions = dimensions
         self.price=price
 
-        def __repr__(self):
-            return "%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand, self.model, self.maxpower, self.dimensions,self.price)
+    def __repr__(self):
+        return "%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand, self.model, self.maxpower, self.dimensions,self.price)
 
     @staticmethod
     def columns():
-        return ["Brand", "Model", "Max Power", "Dimensions"]
+        return ["Brand", "Model", "Max Power", "Dimensions", "Price"]
 
 class Ram(database.Model):
 
