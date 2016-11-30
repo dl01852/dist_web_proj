@@ -107,6 +107,7 @@ def gpu_page():
 def hardDive_page():
 
     from objects import HardDrive, UserAccount
+    
     return  render_template('productTemplate.html',table=HardDrive)
 
 # @app.route('/SSDs')
