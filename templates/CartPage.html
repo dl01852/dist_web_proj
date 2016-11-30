@@ -14,6 +14,7 @@
                 if(true && !arguments.callee.preventAdditional)//Make call to database to see if items exist in cart
                 {
                     //setup of table
+                    var numTypes=3; //however many types we want displayed e.g. name, price, etc.
                     var t = document.createElement("table");
                     t.style.width='100%';
                     t.setAttribute('border','1');
@@ -24,8 +25,27 @@
                     //add header to table
                     var th = document.createElement("th");
                     th.innerHTML="Part Cart";
-                    th.setAttribute("colSpan","3");
+                    th.setAttribute("colSpan",numTypes.toString());
+                    var titleRow = document.createElement("tr");
+                    for(var i=0;i<numTypes;i++)//
+                    {
+                        var h = document.createElement("th");
+                        switch(i)
+                        {
+                            case 0:
+                                h.innerHTML = "Picture";
+                                break;
+                            case 1:
+                                h.innerHTML = "Product";
+                                break;
+                            case 2:
+                                h.innerHTML = "Price";
+                                break;
+                        }
+                        titleRow.appendChild(h);
+                    }
                     tHead.appendChild(th);
+                    tHead.appendChild(titleRow);
 
                     //add body of table
                     for(var i=0;i<4;i++)//for each item in cart database
@@ -39,17 +59,15 @@
                             {
                                 case 0://picture
                                     col.innerHTML="I'm a picture";
-                                    row.appendChild(col);
                                     break;
                                 case 1://name
                                     col.innerHTML="I'm a product";
-                                    row.appendChild(col);
                                     break;
                                 case 2://price
                                     col.innerHTML="I'm a price";
-                                    row.appendChild(col);
                                     break;
                             }
+                            row.appendChild(col);
                         }
                         tBody.appendChild(row);
                     }
