@@ -39,7 +39,10 @@
              {%  endfor %}
          <td>
              <form action="" method="post">
-                 <input style="padding: 8px;margin-left: 15px" type="submit" value="Add" name="{{ loop.index }}">
+                 <input type="hidden" name="username" value="{{ username }}">
+                 <input type="hidden" name="id" value="{{ loop.index }}">
+                 <input style="padding: 8px;margin-left: 15px" type="submit" value="add">
+
              </form>
          </td>
          </tr>

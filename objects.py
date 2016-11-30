@@ -11,7 +11,8 @@ class UserAccount(database.Model):
     username = database.Column(database.String, nullable=False, unique=True)
     password = database.Column(database.String, nullable=False)
 
-    def __init__(self, username, password):
+    def __init__(self,id, username, password):
+        self.id = id
         self.username = username
         self.password = password
 
@@ -42,7 +43,7 @@ class Cart(database.Model):
         self.harddrive_id=harddriveid
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t" % (self.gpuid, self.cpuid, self.powersupplyid, self.ram_id, self.motherboardid, self.harddrive_id)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.userid,self.gpuid, self.cpuid, self.powersupplyid, self.ram_id, self.motherboardid, self.harddrive_id)
 
 
 

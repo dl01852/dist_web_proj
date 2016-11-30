@@ -83,10 +83,24 @@ def ram_page():
     username = session['username']
     return render_template('productTemplate.html', table=Ram,username=username)
 
-@app.route('/CPUs')
+@app.route('/CPUs',methods=['GET','POST'])
 def cpu_page():
-    from objects import CPU
+    from objects import CPU, UserAccount,Cart
     username = session['username']
+    if request.method == 'POST':
+        cpuId = request.form['id']
+        username = request.form['username']
+        cpu = CPU.query.filter_by(id=cpuId).first()
+        user = UserAccount.query.filter_by(username=username).first()
+        if user != None:
+            cart = Cart.query.filter_by(userid=user.id).first()
+            if cart == None: # if cart exist does not, then exist it you and add item to it.
+                userCart = Cart(user.id,None,cpu.id,None,None,None,None)
+                database.session.add(userCart)
+                database.session.commit()
+            elif cart != None:
+                cart.cpuid = cpu.id
+                database.session.commit()
     return render_template('productTemplate.html', table=CPU,username=username)
 
 
@@ -127,7 +141,20 @@ def hardDive_page():
 
 @app.route('/cart')
 def cart_page():
-    return render_template('CartPage.html')
+    from objects import UserAccount, Cart
+    username = session['username']
+    user = UserAccount.query.filter_by(username=username).first()# get the user.
+    cart = Cart.query.filter_by(userid=user.id).all() # get that users cart.
+    if cart == None: # if no cart.
+        return render_template('CartPage.html')
+    else:
+        picPrice =[] # list to hold a picture and price of the part selected.
+        for part in cart:
+            if part == None:
+                continue
+            picPrice.append((part.img,part.price))
+
+        return render_template('CartPage.html',items=picPrice)
 
 
 

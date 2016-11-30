@@ -96,6 +96,16 @@
         </div>
 
         <div class="cart_content">
+            {% if items %}
+                <table border="2">
+                {% for item in items %}
+                    <tr>
+                        <td><img src="{{ item[0] }}"></td>
+                        <td>{{ item[1] }}</td>
+                    </tr>
+                {% endfor %}
+                </table>
+            {% endif %}
 
         </div>
 
