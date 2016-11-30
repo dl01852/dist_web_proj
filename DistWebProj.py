@@ -15,7 +15,17 @@ def add_user():
     error = None
     if request.method == 'POST':
         if 'login' in request.form:
-            return '<h1> LOGGED IN!!! </h1>'
+            username = request.form['username']
+            password = request.form['password']
+            if username == "" or username.strip() == "" or password == "" or password.strip() == "":
+                error = "PLEASE FILL IN ALL THE FIELDS!"
+            else:
+                from objects import UserAccount
+                user = UserAccount.query.filter_by(username=username).first()
+                if user == None or user.password != password:
+                    error = "username or password is incorrect"
+                else:
+                    return render_template('HomePage.html',username=username)
         elif 'register' in request.form:
             return '<h1> REGISTERED!!</h1>'
     # error = None
@@ -36,8 +46,8 @@ def home_page():
 
 @app.route('/post_user', methods=['POST'])
 def post_user():
-    from objects import User
-    userAccount = User(request.form['username'], request.form['password']) ## grab the data from the form.
+    from objects import UserAccount
+    userAccount = UserAccount(request.form['username'], request.form['password']) ## grab the data from the form.
     database.session.add(userAccount) # form the SQL to insert.
     database.session.commit() # run the actual sql command.
     return redirect(url_for('add_user')) # rever the user back to the  create user form.
@@ -74,7 +84,7 @@ def psu_page():
 
 @app.route('/VideoCards')
 def gpu_page():
-    from objects import GPU, User
+    from objects import GPU, UserAccount
     return render_template('productTemplate.html', table=GPU)
 
 
@@ -85,7 +95,7 @@ def gpu_page():
 
 @app.route('/HardDrives')
 def hardDive_page():
-    from objects import HardDrive, User
+    from objects import HardDrive, UserAccount
     return  render_template('productTemplate.html',table=HardDrive)
 
 # @app.route('/SSDs')

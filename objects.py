@@ -1,7 +1,7 @@
 from DistWebProj import database
 
 
-class User(database.Model):
+class UserAccount(database.Model):
 
     __tablename__ = 'useraccount'
 
