@@ -13,7 +13,7 @@ body
 
 #tabnav
 {
-    position: absolute;
+
 }
 
 .tab
@@ -28,6 +28,7 @@ a.link
     background-color:	#000080 ; /* tab background */
     color: #fff; /* tab font color */
     text-decoration: none;
+    margin:1em 2em;
 }
 
 #banner
@@ -38,8 +39,8 @@ a.link
 h1
 {
     text-align: center;
-   font-size: 32pt;
-   color: #3333DD
+    font-size: 32pt;
+    color: #3333DD
 }
 
 #h2
