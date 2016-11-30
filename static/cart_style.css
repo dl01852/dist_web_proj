@@ -4,8 +4,19 @@ body
     font: 100% verdana, arial, sans-serif;
 }
 
+#border1
+{
+	border-radius:200px;
+    border-style: outset;
+	background:#3333DD;
+    background: linear-gradient(to bottom right, #DDF 5%, rgba(60,60,230,1),#DDF 95%);
+	color:#FAFAFA;
+	padding:50px;
+}
+
 h1
 {
+    text-align: center;
     font-size:32pt;
     color: #000080;
 }

@@ -64,7 +64,8 @@ def products_page():
 
 @app.route('/thankyou')
 def thankyou_page():
-    return render_template('ThankyouPage.html')
+    username = session['username']
+    return render_template('ThankyouPage.html',username=username)
 
 @app.route('/motherboards')
 def mobo_page():
@@ -147,15 +148,14 @@ def cart_page():
     cart = Cart.query.filter_by(userid=user.id).first() # get that users cart.
     if cart == None: # if no cart.
         return render_template('CartPage.html')
-    # else:
-    #     picPrice =[] # list to hold a picture and price of the part selected.
-    #     for part in cart:
-    #         if part == None:
-    #             continue
-    #         picPrice.append((part.id))
+    else:
+        picPrice =[] # list to hold a picture and price of the part selected.
+        for part in cart:
+            if part == None:
+                continue
+            picPrice.append((part.img,part.price))
 
-    return render_template('CartPage.html',items=Cart)
-
+        return render_template('CartPage.html',items=picPrice,username=username)
 
 
 
