@@ -58,7 +58,7 @@ class Ram(database.Model):
     speed = database.Column(database.VARCHAR, nullable=True)
     voltage = database.Column(database.VARCHAR, nullable=True)
     notes = database.Column(database.VARCHAR, nullable=True)
-    prices= database.Column(database.VARCHAR, nullable=True)
+    price= database.Column(database.VARCHAR, nullable=True)
 
 
     def __init__(self,img, model,size,type,speed,voltage,notes, price):
@@ -88,27 +88,29 @@ class CPU(database.Model):
     type = database.Column(database.VARCHAR, nullable=True)
     model = database.Column(database.VARCHAR, nullable=True)
     socket = database.Column(database.VARCHAR, nullable=True)
+    core=database.Column(database.VARCHAR, nullable=True)
     operatingfrequency = database.Column(database.VARCHAR, nullable=True)
     thermaldesignpower = database.Column(database.VARCHAR, nullable=True)
     price=database.Column(database.VARCHAR, nullable=True)
 
 
-    def __init__(self,img,brand,type,model,socket,operatingfrequency,thermaldesignpower, price):
+    def __init__(self,img,brand,type,model,socket,core,operatingfrequency,thermaldesignpower, price):
         self.img=img
         self.brand = brand
         self.type = type
         self.model = model
         self.socket = socket
+        self.core=core
         self.operatingfrequency = operatingfrequency
         self.thermaldesignpoower = thermaldesignpower
         self.price=price
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" %(self.img,self.brand,self.type,self.model,self.socket,self.operatingfrequency,self.thermaldesignpower, self.price)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" %(self.img,self.brand,self.type,self.model,self.socket,self.core,self.operatingfrequency,self.thermaldesignpower, self.price)
 
     @staticmethod
     def columns():
-        return ["Brand","Type","Mode","Socket","Operating Frequency","Thermal Design Power","Price"]
+        return ["Brand","Type","Mode","Socket","Core","Operating Frequency","Thermal Design Power","Price"]
 class GPU(database.Model):
 
     __tablename__ = 'gpu'
@@ -183,26 +185,26 @@ class Tower(database.Model):
     model = database.Column(database.VARCHAR, nullable=True)
     type = database.Column(database.VARCHAR, nullable=True)
     compatibility = database.Column(database.VARCHAR, nullable=True)
-    expansionSlots = database.Column(database.VARCHAR, nullable=True)
-    gpuSupport = database.Column(database.VARCHAR, nullable=True)
+    expansionslots = database.Column(database.VARCHAR, nullable=True)
+    gpusupport = database.Column(database.VARCHAR, nullable=True)
     dimensions = database.Column(database.VARCHAR, nullable=True)
     weight = database.Column(database.VARCHAR, nullable=True)
     price = database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self, img, brand, model, type, compatibility, expansionSlots, gpuSupport, dimensions, weight, price):
+    def __init__(self, img, brand, model, type, compatibility, expansionslots, gpusupport, dimensions, weight, price):
         self.img=img
         self.brand=brand
         self.model=model
         self.type=type
         self.compatibility=compatibility
-        self.expansionSlots=expansionSlots
-        self.gpuSupport=gpuSupport
+        self.expansionslots=expansionslots
+        self.gpusupport=gpusupport
         self.dimensions=dimensions
         self.weight=weight
         self.price=price
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img, self.brand, self.model,self.type, self.compatibility, self.expansionSlots, self.gpuSupport, self.dimensions, self.weight, self.price)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img, self.brand, self.model,self.type, self.compatibility, self.expansionslots, self.gpusupport, self.dimensions, self.weight, self.price)
 
 
     @staticmethod
@@ -296,11 +298,12 @@ class Cooler(database.Model):
     type= database.Column(database.VARCHAR, nullable=True)
     compatibility= database.Column(database.VARCHAR, nullable=True)
     connector= database.Column(database.VARCHAR, nullable=True)
-    sinkDimensions= database.Column(database.VARCHAR, nullable=True)
+    fandimensions=database.Column(database.VARCHAR, nullable=True)
+    sinkdimensions= database.Column(database.VARCHAR, nullable=True)
     features= database.Column(database.VARCHAR, nullable=True)
     price= database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self,img,brand,series,model,type,compatibility,connector,sinkDimensions,features,price):
+    def __init__(self,img,brand,series,model,type,compatibility,connector, fandimensions,sinkdimensions,features,price):
         self.img = img
         self.brand = brand
         self.series = series
@@ -308,16 +311,17 @@ class Cooler(database.Model):
         self.type=type
         self.compatibility=compatibility
         self.connector=connector
-        self.sinkDimensions=sinkDimensions
+        self.fandimensions=fandimensions
+        self.sinkdimensdons=sinkdimensions
         self.features=features
         self.price=price
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img, self.brand, self.series, self.model, self.type, self.compatibility, self.connector, self.sinkDimensions, self.features, self.price)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img, self.brand, self.series, self.model, self.type, self.compatibility, self.connector,self.fandimensions, self.sinkdimensions, self.features, self.price)
 
     @staticmethod
     def columns():
-        return ["Brand","Series","Model","Type","Compatibility","Connector","Sink Dimensions","Features" "Price"]
+        return ["Brand","Series","Model","Type","Compatibility","Connector","Fan Dimensions","Sink Dimensions","Features" ,"Price"]
 
 
 
