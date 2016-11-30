@@ -124,7 +124,7 @@ def gpu_page():
 #     return render_template('productTemplate.html', table=Cooler)
 
 @app.route('/HardDrives')
-def hardDive_page():
+def hardDrive_page():
 
     from objects import HardDrive, UserAccount
     username = session['username']
@@ -143,7 +143,7 @@ def hardDive_page():
 @app.route('/cart')
 def cart_page():
     from objects import UserAccount, Cart
-    # username = session['username']
+    username = session['username']
     # user = UserAccount.query.filter_by(username=username).first()# get the user.
     # cart = Cart.query.filter_by(userid=user.id).first() # get that users cart.
     # if cart == None: # if no cart.
@@ -155,7 +155,7 @@ def cart_page():
     #             continue
     #         picPrice.append((part.img,part.price))
 
-    return render_template('CartPage.html',items=Cart)
+    return render_template('CartPage.html',items=Cart,username=username)
 
 
 
