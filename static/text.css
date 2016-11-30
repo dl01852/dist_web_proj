@@ -17,12 +17,11 @@ body
 ul#tabnav
 { /* do not change */
     border-bottom: 1px solid #DAA520; /* line color*/
-    display: inline;
-    margin: 1em auto; /* set margins as desired */
 }
 
 .tab
 { /* settings for selected tab */
+    display: inline;
     margin: 0px auto;
 }
 
