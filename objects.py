@@ -193,34 +193,30 @@ class HardDrive(database.Model):
     id=database.Column(database.INTEGER,primary_key=True)
     img= database.Column(database.VARCHAR, nullable=True)
     brand= database.Column(database.VARCHAR, nullable=True)
-    series= database.Column(database.VARCHAR, nullable=True)
     model= database.Column(database.VARCHAR, nullable=True)
     interface= database.Column(database.VARCHAR, nullable=True)
     capacity= database.Column(database.VARCHAR, nullable=True)
     rpm= database.Column(database.VARCHAR, nullable=True)
-    dimensions= database.Column(database.VARCHAR, nullable=True)
     features= database.Column(database.VARCHAR, nullable=True)
     price= database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self, id, img, brand, series, model, interface, capacity, rpm, dimensions, features, price):
-        self.id = id
+    def __init__(self, img, brand, model, interface, capacity, rpm, features, price):
+
         self.img=img
         self.brand=brand
-        self.series=series
         self.model=model
         self.interface=interface
         self.capacity=capacity
         self.rpm=rpm
-        self.dimensions=dimensions
         self.features=features
         self.price=price
 
     def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img,self.brand,self.series,self.model,self.interface,self.capacity,self.rpm,self.dimensions,self.features,self.price)
+        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand,self.model,self.interface,self.capacity,self.rpm,self.features,self.price)
 
     @staticmethod
     def columns():
-        return ["Brand","Series","Model","Interface","Capacity","RPM","Dimensions","Features","Price"]
+        return ["Brand","Model","Interface","Capacity","RPM","Features","Price"]
 
 class Cart(database.Model):
     __tablename__ = 'cart'

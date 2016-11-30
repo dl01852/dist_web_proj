@@ -147,14 +147,14 @@ def cart_page():
     cart = Cart.query.filter_by(userid=user.id).first() # get that users cart.
     if cart == None: # if no cart.
         return render_template('CartPage.html')
-    else:
-        picPrice =[] # list to hold a picture and price of the part selected.
-        for part in cart:
-            if part == None:
-                continue
-            picPrice.append((part.img,part.price))
+    # else:
+    #     picPrice =[] # list to hold a picture and price of the part selected.
+    #     for part in cart:
+    #         if part == None:
+    #             continue
+    #         picPrice.append((part.id))
 
-        return render_template('CartPage.html',items=picPrice)
+    return render_template('CartPage.html',items=Cart)
 
 
 

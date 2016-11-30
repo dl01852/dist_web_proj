@@ -96,18 +96,32 @@
         </div>
 
         <div class="cart_content">
+
             {% if items %}
                 <table border="2">
-                {% for item in items %}
                     <tr>
-                        <td><img src="{{ item[0] }}"></td>
-                        <td>{{ item[1] }}</td>
+                    {% for column in items.columns() %}
+                        <th>{{column}}</th>
+                    {% endfor %}
                     </tr>
-                {% endfor %}
+
+                {% for entry in items.query.filter_by(userid=1) %}
+         <tr>
+             {% for piece in (entry|string()).split("\t")[1:] %}
+                 {% if piece  %}
+                    <td>{{ piece }}</td>
+                 {% endif %}
+             {%  endfor %}
+         </tr>
+        {% endfor %}
+
                 </table>
             {% endif %}
 
         </div>
+
+
+
 
         <div class="checkout">
             <input type="button" value="Checkout Cart" onclick="location.href='thankyou'">
