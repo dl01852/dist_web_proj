@@ -1,4 +1,8 @@
 from DistWebProj import database
+from sqlalchemy import ForeignKey
+import webbrowser
+
+
 
 
 class UserAccount(database.Model):
@@ -15,6 +19,29 @@ class UserAccount(database.Model):
 
     def __repr__(self):
         return "%s:%s" % (self.username, self.password)
+
+
+class Cart(database.Model):
+
+    __tablename__='cart'
+
+    id = database.Column(database.INTEGER, primary_key=True)
+    userid=database.Column(database.INTEGER, ForeignKey('useraccount.id'), nullable=False)
+    gpuid=database.Column(database.INTEGER,  ForeignKey('gpu.id'),nullable=True)
+    cpuid=database.Column(database.INTEGER, ForeignKey('cpu.id'), nullable=True)
+    powersupplyid=database.Column(database.INTEGER, ForeignKey('powersupply.id'), nullable=True)
+    ramid=database.Column(database.INTEGER, ForeignKey('ram.id'), nullable=True)
+    motherboardid=database.Column(database.INTEGER, ForeignKey('motherboard.id'), nullable=True)
+    harddriveid=database.Column(database.INTEGER, ForeignKey('harddrive.id'), nullable=True)
+
+    def __init__(self,userid, gpuid,cpuid,powersupplyid,ramid,motherboardid,harddriveid):
+        self.userid=userid
+        self.gpuid=gpuid
+        self.cpuid=cpuid
+        self.powersupplyid=powersupplyid
+        self.ram_id=ramid
+        self.motherboardid=motherboardid
+        self.harddrive_id=harddriveid
 
 
 
@@ -39,8 +66,8 @@ class Powersupply(database.Model):
         self.dimensions = dimensions
         self.price=price
 
-    def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand, self.model, self.maxpower, self.dimensions,self.price)
+        def __repr__(self):
+            return "%s\t%s\t%s\t%s\t%s\t%s" % (self.img,self.brand, self.model, self.maxpower, self.dimensions,self.price)
 
     @staticmethod
     def columns():
