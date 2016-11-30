@@ -43,7 +43,12 @@ class Cart(database.Model):
         self.motherboardid=motherboardid
         self.harddrive_id=harddriveid
 
+    def __repr__(self):
+        return "%s\t%s\t%s\t%s\t%s\t%s\t" % (self.gpuid, self.cpuid, self.powersupplyid, self.ram_id, self.motherboardid, self.harddrive_id)
 
+    @staticmethod
+    def columns():
+        return["GPU","CPU","PowerSupply","RAM","Motherboard","Hard Drive"]
 
 
 class Powersupply(database.Model):
