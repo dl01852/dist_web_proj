@@ -9,16 +9,10 @@ body
 
 #tabs
 {
+    font: bold 12px verdana, arial, sans-serif; /* set font as desired */
     width:50%;
     margin: 0px auto;
-}
-
-ul#tabnav
-{ /* general settings */
-    font: bold 12px verdana, arial, sans-serif; /* set font as desired */
     border-bottom: 1px solid #DAA520; /* line color*/
-    list-style-type: none;
-    padding: 3px 10px;
 }
 
 ul#tabnav li
@@ -32,7 +26,7 @@ ul#tabnav li
     margin: 0px auto;
 }
 
-.link
+.link:link
 { /* settings for selected tab link */
     background-color: #fff; /* set selected tab background color as desired */
     color: #000; /* set selected tab link color as desired */
