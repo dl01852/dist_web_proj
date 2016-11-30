@@ -12,33 +12,38 @@ database = SQLAlchemy(app)
 
 @app.route('/',methods=['GET','POST'])
 def add_user():
-    error = None
+    login_error = None
+    register_error = None
+    registered = None
     if request.method == 'POST':
         if 'login' in request.form:
             username = request.form['username']
             password = request.form['password']
             if username == "" or username.strip() == "" or password == "" or password.strip() == "":
-                error = "PLEASE FILL IN ALL THE FIELDS!"
+                login_error = "PLEASE FILL IN ALL THE FIELDS!"
             else:
                 from objects import UserAccount
                 user = UserAccount.query.filter_by(username=username).first()
                 if user == None or user.password != password:
-                    error = "username or password is incorrect"
+                    login_error = "username or password is incorrect"
                 else:
                     return render_template('HomePage.html',username=username)
         elif 'register' in request.form:
-            return '<h1> REGISTERED!!</h1>'
-    # error = None
-    # if request.method == 'POST':
-    #     if 'login' in request.form:
-    #         username = request.form['username']
-    #         password = request.form['password']
-    #         if username or username.strip() or password or password.strip():
-    #             error = "Please fill in both fields!"
-    #     elif 'register' in request.form:
-    #         return '<h1> REGISTERED </h1>'
-    #     else
-    return render_template('LoginPage.html',error=error)
+            username = request.form['username']
+            password = request.form['password']
+            if username == "" or username.strip() == "" or password == "" or password.strip() == "":
+                register_error = "PLEASE FILL IN ALL THE FILEDS!"
+            else:
+                from objects import UserAccount
+                user = UserAccount.query.filter_by(username=username).first()
+                if user != None:
+                    register_error = "User already exist!"
+                else:
+                    user = UserAccount(username,password)
+                    database.session.add(user)
+                    database.session.commit()
+                    registered = "Registered!"
+    return render_template('LoginPage.html',login_error=login_error,register_error=register_error,registered=registered)
 
 @app.route('/home')
 def home_page():
