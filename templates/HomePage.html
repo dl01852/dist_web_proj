@@ -9,17 +9,18 @@
 		<!-- Header showing name of website -->
 		<div class="header">
 			<h1 id="border1">GSU Computer Company</h1>
-			<h2><a href="products" class ="product_link">Explorer</a></h2>
+            <div class="link_bar">
+                    <h2>
+                        <span id="login"><a href="login" class ="link">Login</a></span>
+                        <span id="register"><a href="register" class ="link">Register</a></span>
+                        <span style="text-align: center" id="products"><a href="products" class ="link">Explorer</a></span>
+                    </h2>
+            </div>
 		</div>
 
 		<!-- Banner picture of some computer stuff -->
 		<div class="banner">
 			<img src="static/motherboard2_edited.jpg">
-		</div>
-
-		<!-- Tabs for component searching -->
-		<div>
-
 		</div>
 
         <!-- Featured content -->
@@ -29,9 +30,6 @@
             </div>
 
             <div class="item1">
-                {% for mobo in supplies %}
-                    <p>{{ range(0,5) | random }}</p>
-                {% endfor %}
                 <h2><img class="featured_icon" src="http://images.bit-tech.net/content_images/2015/05/nvidia-geforce-gtx-980-ti-review/980ti-1b.jpg">GeForce GTX 980 Ti</h2>
                 <p>Description here</p>
             </div>

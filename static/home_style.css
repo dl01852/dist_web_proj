@@ -14,6 +14,23 @@ body
 	color:#3333DD;
 }
 
+#login
+{
+	float: left;
+	padding:0px 10px;
+}
+
+#register
+{
+	float: left;
+	padding:0px 10px;
+}
+
+#products
+{
+	float: right;
+}
+
 div.header h1
 {
 	margin: 0px 30px 30px;
@@ -22,7 +39,7 @@ div.header h1
 
 div.header h2
 {
-	text-align:right;
+
 }
 
 div.header img
@@ -71,22 +88,22 @@ h1
 	text-align:center;
 }
 
-a.product_link
+a.link
 {
     text-decoration: none;
 }
 
-a.product_link:link
+a.link:link
 {
     color:#33D;
 }
 
-a.product_link:hover
+a.link:hover
 {
     color:#FAFAFA;
 }
 
-a.product_link:visited
+a.link:visited
 {
     color:#33D;
 }
