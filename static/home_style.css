@@ -53,10 +53,20 @@ div.banner img
 	width:100%;
 }
 
+div.user_area
+{
+	width:40%;
+	alignment: center;
+	color:#000080;
+	font-size: 20px;
+	background:#FAFAFA;
+	padding:40px 25px;
+	margin:20px auto;
+}
+
 div.featured_content
 {
 	color:#000080;
-	font-family: Arial;
 	font-size: 20px;
 	background:#FAFAFA;
 	padding:10px 25px;
