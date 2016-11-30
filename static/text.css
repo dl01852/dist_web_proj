@@ -94,7 +94,28 @@ a.home_link:visited
 
 table.product_table
 {
-    background: #FAFAFA;
-    color:#000080;
     margin:auto;
+    background:#FAFAFA;
+    color:#000040;
+    border: 1px solid #666;
+    border-collapse: collapse;
+}
+
+table.product_table th
+{
+    font-size: 24px;
+    background: #99F;
+    padding:20px;
+}
+
+table.product_table td
+{
+    font-size: 16px;
+    padding:15px;
+
+}
+
+table.product_table tr:hover
+{
+    background-color:#eef;
 }
