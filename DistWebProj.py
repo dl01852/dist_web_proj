@@ -40,7 +40,7 @@ def add_user():
                 if user != None:
                     register_error = "User already exist!"
                 else:
-                    user = UserAccount(username,password)
+                    user = UserAccount(id=None,username=username,password=password)
                     database.session.add(user)
                     database.session.commit()
                     registered = "Registered!"
@@ -95,7 +95,7 @@ def cpu_page():
         if user != None:
             cart = Cart.query.filter_by(userid=user.id).first()
             if cart == None: # if cart exist does not, then exist it you and add item to it.
-                userCart = Cart(user.id,None,cpu.id,None,None,None,None)
+                userCart = Cart(user.id,user.id,None,cpu.id,None,None,None,None)
                 database.session.add(userCart)
                 database.session.commit()
             elif cart != None:
@@ -144,7 +144,7 @@ def cart_page():
     from objects import UserAccount, Cart
     username = session['username']
     user = UserAccount.query.filter_by(username=username).first()# get the user.
-    cart = Cart.query.filter_by(userid=user.id).all() # get that users cart.
+    cart = Cart.query.filter_by(userid=user.id).first() # get that users cart.
     if cart == None: # if no cart.
         return render_template('CartPage.html')
     else:

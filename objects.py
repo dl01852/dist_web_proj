@@ -20,37 +20,6 @@ class UserAccount(database.Model):
         return "%s:%s" % (self.username, self.password)
 
 
-class Cart(database.Model):
-
-    __tablename__='cart'
-
-    id = database.Column(database.INTEGER, primary_key=True)
-    userid=database.Column(database.INTEGER, ForeignKey('useraccount.id'), nullable=False)
-    gpuid=database.Column(database.INTEGER,  ForeignKey('gpu.id'),nullable=True)
-    cpuid=database.Column(database.INTEGER, ForeignKey('cpu.id'), nullable=True)
-    powersupplyid=database.Column(database.INTEGER, ForeignKey('powersupply.id'), nullable=True)
-    ramid=database.Column(database.INTEGER, ForeignKey('ram.id'), nullable=True)
-    motherboardid=database.Column(database.INTEGER, ForeignKey('motherboard.id'), nullable=True)
-    harddriveid=database.Column(database.INTEGER, ForeignKey('harddrive.id'), nullable=True)
-
-    def __init__(self,userid, gpuid,cpuid,powersupplyid,ramid,motherboardid,harddriveid):
-        self.userid=userid
-        self.gpuid=gpuid
-        self.cpuid=cpuid
-        self.powersupplyid=powersupplyid
-        self.ram_id=ramid
-        self.motherboardid=motherboardid
-        self.harddrive_id=harddriveid
-
-    def __repr__(self):
-        return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.userid,self.gpuid, self.cpuid, self.powersupplyid, self.ram_id, self.motherboardid, self.harddrive_id)
-
-
-
-
-    @staticmethod
-    def columns():
-        return["GPU","CPU","PowerSupply","RAM","Motherboard","Hard Drive"]
 
 
 class Powersupply(database.Model):
@@ -65,7 +34,8 @@ class Powersupply(database.Model):
     dimensions = database.Column(database.VARCHAR, nullable=True)
     price = database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self,img, brand, model, maxpower, dimensions,price):
+    def __init__(self,id,img, brand, model, maxpower, dimensions,price):
+        self.id = id
         self.img=img
         self.brand = brand
         self.model = model
@@ -95,7 +65,8 @@ class Ram(database.Model):
     price= database.Column(database.VARCHAR, nullable=True)
 
 
-    def __init__(self,img, model,size,type,speed,voltage,notes, price):
+    def __init__(self,id,img, model,size,type,speed,voltage,notes, price):
+        self.id = id
         self.model = model
         self.size=size
         self.type = type
@@ -128,7 +99,8 @@ class CPU(database.Model):
     price=database.Column(database.VARCHAR, nullable=True)
 
 
-    def __init__(self,img,brand,type,model,socket,core,operatingfrequency,thermaldesignpower, price):
+    def __init__(self,id,img,brand,type,model,socket,core,operatingfrequency,thermaldesignpower, price):
+        self.id = id
         self.img=img
         self.brand = brand
         self.type = type
@@ -160,7 +132,8 @@ class GPU(database.Model):
     memorytype = database.Column(database.VARCHAR, nullable=True)
     price = database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self,img,brand,model,interface,manufacturer,type,size,memorytype, price):
+    def __init__(self,id,img,brand,model,interface,manufacturer,type,size,memorytype, price):
+        self.id = id
         self.img=img
         self.brand = brand
         self.model = model
@@ -194,7 +167,8 @@ class MotherBoard(database.Model):
     price = database.Column(database.VARCHAR, nullable=True)
 
 
-    def __init__(self,img,brand,model,memoryslots,supportedsocket,supportedcpu,expansionslots,price):
+    def __init__(self, id,img,brand,model,memoryslots,supportedsocket,supportedcpu,expansionslots,price):
+        self.id = id
         self.img=img
         self.brand = brand
         self.model = model
@@ -211,41 +185,6 @@ class MotherBoard(database.Model):
     def columns():
         return ["Brand","Model","Memory Slots","Supported Socket","Supported CPU", "Expansion Slots","Price"]
 
-# class Tower(database.Model):
-#
-#     __tablename__ = 'tower'
-#
-#     id= database.Column(database.INTEGER,primary_key=True)
-#     img = database.Column(database.VARCHAR, nullable=True)
-#     brand = database.Column(database.VARCHAR, nullable=True)
-#     model = database.Column(database.VARCHAR, nullable=True)
-#     type = database.Column(database.VARCHAR, nullable=True)
-#     compatibility = database.Column(database.VARCHAR, nullable=True)
-#     expansionslots = database.Column(database.VARCHAR, nullable=True)
-#     gpusupport = database.Column(database.VARCHAR, nullable=True)
-#     dimensions = database.Column(database.VARCHAR, nullable=True)
-#     weight = database.Column(database.VARCHAR, nullable=True)
-#     price = database.Column(database.VARCHAR, nullable=True)
-#
-#     def __init__(self, img, brand, model, type, compatibility, expansionslots, gpusupport, dimensions, weight, price):
-#         self.img=img
-#         self.brand=brand
-#         self.model=model
-#         self.type=type
-#         self.compatibility=compatibility
-#         self.expansionslots=expansionslots
-#         self.gpusupport=gpusupport
-#         self.dimensions=dimensions
-#         self.weight=weight
-#         self.price=price
-#
-#     def __repr__(self):
-#         return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img, self.brand, self.model,self.type, self.compatibility, self.expansionslots, self.gpusupport, self.dimensions, self.weight, self.price)
-#
-#
-#     @staticmethod
-#     def columns():
-#         return ["Brand", "Model", "Type", "Compatibility", "ExpansionSlots", "GpuSupport", "Dimensions", "Weight", "Price"]
 
 class HardDrive(database.Model):
 
@@ -263,7 +202,8 @@ class HardDrive(database.Model):
     features= database.Column(database.VARCHAR, nullable=True)
     price= database.Column(database.VARCHAR, nullable=True)
 
-    def __init__(self, img, brand, series, model, interface, capacity, rpm, dimensions, features, price):
+    def __init__(self, id, img, brand, series, model, interface, capacity, rpm, dimensions, features, price):
+        self.id = id
         self.img=img
         self.brand=brand
         self.series=series
@@ -282,82 +222,55 @@ class HardDrive(database.Model):
     def columns():
         return ["Brand","Series","Model","Interface","Capacity","RPM","Dimensions","Features","Price"]
 
-# class SSD(database.Model):
-#
-#     __tablename__='ssd'
-#
-#     id=database.Column(database.INTEGER,primary_key=True)
-#     img= database.Column(database.VARCHAR, nullable=True)
-#     brand= database.Column(database.VARCHAR, nullable=True)
-#     series= database.Column(database.VARCHAR, nullable=True)
-#     model= database.Column(database.VARCHAR, nullable=True)
-#     capacity= database.Column(database.VARCHAR, nullable=True)
-#     interface= database.Column(database.VARCHAR, nullable=True)
-#     controller= database.Column(database.VARCHAR, nullable=True)
-#     speed= database.Column(database.VARCHAR, nullable=True)
-#     features= database.Column(database.VARCHAR, nullable=True)
-#     powerconsume= database.Column(database.VARCHAR, nullable=True)
-#     dimensions= database.Column(database.VARCHAR, nullable=True)
-#     price= database.Column(database.VARCHAR, nullable=True)
-#
-#     def __init__(self, img, brand, series, model, capacity, interface, controller, speed, features, powerconsume, dimensions, price):
-#         self.img=img
-#         self.brand=brand
-#         self.series=series
-#         self.model=model
-#         self.capacity=capacity
-#         self.interface=interface
-#         self.controller=controller
-#         self.speed=speed
-#         self.features=features
-#         self.powerconsume=powerconsume
-#         self.dimensions=dimensions
-#         self.price=price
-#
-#     def __repr__(self):
-#         return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img, self.brand, self.series, self.model, self.capacity, self.interface, self.controller, self.speed, self.features, self.powerconsume, self.dimensions, self.price)
-#
-#     @staticmethod
-#     def columns():
-#         return ["Brand","Series","Model","Capacity","Interface","Controller","Speed","Features","PowerConsumption","Dimensions","Price"]
-#
-# class Cooler(database.Model):
-#
-#     __tablename__='cooler'
-#
-#
-#     id=database.Column(database.INTEGER,primary_key=True)
-#     img= database.Column(database.VARCHAR, nullable=True)
-#     brand= database.Column(database.VARCHAR, nullable=True)
-#     series= database.Column(database.VARCHAR, nullable=True)
-#     model= database.Column(database.VARCHAR, nullable=True)
-#     type= database.Column(database.VARCHAR, nullable=True)
-#     compatibility= database.Column(database.VARCHAR, nullable=True)
-#     connector= database.Column(database.VARCHAR, nullable=True)
-#     fandimensions=database.Column(database.VARCHAR, nullable=True)
-#     sinkdimensions= database.Column(database.VARCHAR, nullable=True)
-#     features= database.Column(database.VARCHAR, nullable=True)
-#     price= database.Column(database.VARCHAR, nullable=True)
-#
-#     def __init__(self,img,brand,series,model,type,compatibility,connector, fandimensions,sinkdimensions,features,price):
-#         self.img = img
-#         self.brand = brand
-#         self.series = series
-#         self.model = model
-#         self.type=type
-#         self.compatibility=compatibility
-#         self.connector=connector
-#         self.fandimensions=fandimensions
-#         self.sinkdimensdons=sinkdimensions
-#         self.features=features
-#         self.price=price
-#
-#     def __repr__(self):
-#         return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (self.img, self.brand, self.series, self.model, self.type, self.compatibility, self.connector,self.fandimensions, self.sinkdimensions, self.features, self.price)
-#
-#     @staticmethod
-#     def columns():
-#         return ["Brand","Series","Model","Type","Compatibility","Connector","Fan Dimensions","Sink Dimensions","Features" ,"Price"]
-#
-#
-#
+class Cart(database.Model):
+    __tablename__ = 'cart'
+
+    id = database.Column(database.Integer, primary_key=True)
+    userid = database.Column(database.Integer, ForeignKey(UserAccount.id), nullable=True)
+    gpuid = database.Column(database.Integer, ForeignKey(GPU.id), nullable=True)
+    cpuid = database.Column(database.Integer, ForeignKey(CPU.id), nullable=True)
+    powersupplyid = database.Column(database.Integer, ForeignKey(Powersupply.id), nullable=True)
+    ramid = database.Column(database.Integer, ForeignKey(Ram.id),nullable=True)
+    motherboardid = database.Column(database.Integer, ForeignKey(MotherBoard.id), nullable=True)
+    #harddriveid = database.Column(database.Integer, ForeignKey(HardDrive.id), nullable=True)
+
+    def __init__(self, id, userid, gpuid, cpuid, powersupplyid, ramid, motherboardid, harddriveid):
+        self.id = id
+        self.userid = userid
+        self.gpuid = gpuid
+        self.cpuid = cpuid
+        self.powersupplyid = powersupplyid
+        self.ramid = ramid
+        self.motherboardid = motherboardid
+        #self.harddriveid = harddriveid
+
+
+    # class Cart(database.Model):
+    #     __tablename__ = 'cart'
+    #
+    #     id = database.Column(database.INTEGER, primary_key=True)
+    #     userid = database.Column(database.INTEGER, ForeignKey(UserAccount.id), nullable=False)
+    #     gpuid = database.Column(database.INTEGER, ForeignKey(GPU.id), nullable=True)
+    #     cpuid = database.Column(database.INTEGER, ForeignKey(CPU.id), nullable=True)
+    #     powersupplyid = database.Column(database.INTEGER, ForeignKey(Powersupply.id), nullable=True)
+    #     ramid = database.Column(database.INTEGER, ForeignKey(Ram.id), nullable=True)
+    #     motherboardid = database.Column(database.INTEGER, ForeignKey(MotherBoard.id), nullable=True)
+    #     #harddriveid = database.Column(database.INTEGER, ForeignKey(HardDrive.id), nullable=True)
+    #
+    #     # cpu = database.relationship('cpu',foreign_keys='cpu.id')
+    #     def __init__(self, userid, gpuid, cpuid, powersupplyid, ramid, motherboardid, harddriveid):
+    #         self.userid = userid
+    #         self.gpuid = gpuid
+    #         self.cpuid = cpuid
+    #         self.powersupplyid = powersupplyid
+    #         self.ram_id = ramid
+    #         self.motherboardid = motherboardid
+    #         self.harddrive_id = harddriveid
+    #
+    #     def __repr__(self):
+    #         return "%s\t%s\t%s\t%s\t%s\t%s\t%s\t" % (
+    #         self.userid, self.gpuid, self.cpuid, self.powersupplyid, self.ram_id, self.motherboardid, self.harddrive_id)
+    #
+    #     @staticmethod
+    #     def columns():
+    #         return ["GPU", "CPU", "PowerSupply", "RAM", "Motherboard", "Hard Drive"]
