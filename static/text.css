@@ -13,7 +13,7 @@ body
 
 #tabnav
 {
-    position: absolute;
+
 }
 
 .tab
@@ -30,6 +30,11 @@ a.link
     text-decoration: none;
 }
 
+a.link:hover
+{ /* settings for hover effect */
+    background:#bbf; /* set desired hover color */
+}
+
 #banner
 {
     width: 100%;
@@ -38,8 +43,8 @@ a.link
 h1
 {
     text-align: center;
-   font-size: 32pt;
-   color: #3333DD
+    font-size: 32pt;
+    color: #3333DD
 }
 
 #h2
