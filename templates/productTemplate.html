@@ -37,7 +37,11 @@
              {% for piece in (entry|string()).split("\t")[1:] %}
              <td>{{ piece }}</td>
              {%  endfor %}
-         <td><input style="padding: 8px;margin-left: 15px" type="button" value="Add" name="{{ loop.index }}"></td>
+         <td>
+             <form action="" method="post">
+                 <input style="padding: 8px;margin-left: 15px" type="button" value="Add" name="{{ loop.index }}">
+             </form>
+         </td>
          </tr>
         {% endfor %}
          </table>
