@@ -29,7 +29,7 @@ body
 .tab
 { /* settings for selected tab */
     display: inline;
-    margin: 0px 10%;
+    margin: 0px 10px;
 }
 
 a.link:link
@@ -38,7 +38,7 @@ a.link:link
     color: #000; /* set selected tab link color as desired */
     position: relative;
     top: 1px;
-    padding: 4px 0px;
+    padding: 4px 3px;
 }
 
 a.link
@@ -47,7 +47,6 @@ a.link
     border: 1px solid #DAA520; /* tabborder color */
     background-color:	#000080 ; /* tab background */
     color: #fff; /* tab font color */
-    margin-right: 0px;
     text-decoration: none;
     border-bottom: none;
 }
