@@ -1,7 +1,8 @@
-body {
-font: 100% verdana, arial, sans-serif;
-background-color:#FDDD60 ;
-margin: 50px;
+body
+{
+    font: 100% verdana, arial, sans-serif;
+    background-color:#FDDD60 ;
+    margin: 50px;
 }
 
 /* begin css tabs */
@@ -11,61 +12,72 @@ margin: 50px;
     margin: 0px auto;
 }
 
-ul#tabnav { /* general settings */
-text-align: left; /* set to left, right or center */
-margin: 1em 0 1em 0; /* set margins as desired */
-font: bold 12px verdana, arial, sans-serif; /* set font as desired */
-border-bottom: 1px solid #DAA520; /* line color*/
-list-style-type: none;
-padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
+ul#tabnav
+{ /* general settings */
+    text-align: left; /* set to left, right or center */
+    margin: 1em 0 1em 0; /* set margins as desired */
+    font: bold 12px verdana, arial, sans-serif; /* set font as desired */
+    border-bottom: 1px solid #DAA520; /* line color*/
+    list-style-type: none;
+    padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
 }
 
-ul#tabnav li { /* do not change */
-display: inline;
+ul#tabnav li
+{ /* do not change */
+    display: inline;
 }
 
 .tab
 { /* settings for selected tab */
-border-bottom: 1px solid #fff; /* set border color to page background color */
-background-color: #fff; /* set background color to match above border color */
+    border-bottom: 1px solid #fff; /* set border color to page background color */
+    background-color: #fff; /* set background color to match above border color */
 }
 
 .link
 { /* settings for selected tab link */
-background-color: #fff; /* set selected tab background color as desired */
-color: #000; /* set selected tab link color as desired */
-position: relative;
-top: 1px;
-padding-top: 4px; /* must change with respect to padding (X) above and below */
+    background-color: #fff; /* set selected tab background color as desired */
+    color: #000; /* set selected tab link color as desired */
+    position: relative;
+    top: 1px;
+    padding-top: 4px; /* must change with respect to padding (X) above and below */
 }
 
-ul#tabnav li a { /* settings for all tab links */
-padding: 3px 4px;
-border: 1px solid #DAA520; /* tabborder color */
-background-color:	#000080 ; /* tab background */
-color: #fff; /* tab font color */
-margin-right: 0px;
-text-decoration: none;
-border-bottom: none;
+ul#tabnav li a
+{ /* settings for all tab links */
+    padding: 3px 4px;
+    border: 1px solid #DAA520; /* tabborder color */
+    background-color:	#000080 ; /* tab background */
+    color: #fff; /* tab font color */
+    margin-right: 0px;
+    text-decoration: none;
+    border-bottom: none;
 }
 
-ul#tabnav a:hover { /* settings for hover effect */
-background:#fff; /* set desired hover color */
+ul#tabnav a:hover
+{ /* settings for hover effect */
+    background:#fff; /* set desired hover color */
 }
-#banner{
+
+#banner
+{
     width: 100%;
 }
-h1{
+
+h1
+{
     text-align: center;
    font-size: 32pt;
    color: #3333DD
 }
 
-#h2{
+#h2
+{
     width:50px;
 	height: 50px;
 }
-h3{
+
+h3
+{
     text-align: right;
     width:25px;
 	height:25px;
