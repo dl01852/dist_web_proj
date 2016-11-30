@@ -11,6 +11,11 @@ body
     margin: 50px;
 }
 
+.cart
+{
+    clear:right;
+}
+
 /* begin css tabs */
 
 #tabs
