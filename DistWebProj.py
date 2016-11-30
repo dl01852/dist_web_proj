@@ -143,19 +143,19 @@ def hardDive_page():
 @app.route('/cart')
 def cart_page():
     from objects import UserAccount, Cart
-    username = session['username']
-    user = UserAccount.query.filter_by(username=username).first()# get the user.
-    cart = Cart.query.filter_by(userid=user.id).first() # get that users cart.
-    if cart == None: # if no cart.
-        return render_template('CartPage.html')
-    else:
-        picPrice =[] # list to hold a picture and price of the part selected.
-        for part in cart:
-            if part == None:
-                continue
-            picPrice.append((part.img,part.price))
+    # username = session['username']
+    # user = UserAccount.query.filter_by(username=username).first()# get the user.
+    # cart = Cart.query.filter_by(userid=user.id).first() # get that users cart.
+    # if cart == None: # if no cart.
+    #     return render_template('CartPage.html')
+    # else:
+    #     picPrice =[] # list to hold a picture and price of the part selected.
+    #     for part in cart:
+    #         if part == None:
+    #             continue
+    #         picPrice.append((part.img,part.price))
 
-        return render_template('CartPage.html',items=picPrice,username=username)
+    return render_template('CartPage.html',items=Cart)
 
 
 
