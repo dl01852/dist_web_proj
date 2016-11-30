@@ -60,7 +60,8 @@ def post_user():
 
 @app.route('/products')
 def products_page():
-    return render_template('ProductsPage.html')
+    username=session['username'];
+    return render_template('ProductsPage.html',username=username)
 
 @app.route('/thankyou')
 def thankyou_page():
