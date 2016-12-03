@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log-in or Register</title>
+    <link rel="stylesheet" type="text/css" href="../static/home_style.css">
+</head>
+<body>
+    <div class="header">
+			<h1 id="border1">GSU Computer Company</h1>
+    </div>
+
+    <div>
+        <div class="user_area">
+            <h2>Log-in</h2>
+            <hr>
+            <form action="" method="post">
+                <p>Username: <input type="text" name="username"></p>
+                <p>Password : <input type="password" name="password"></p>
+                <input type="submit" value="Sign in" name="login">
+                {% if login_error %}
+                    <p style="font-weight:bold;color:#FAA" class="error">Error: {{ login_error }}</p>{% endif %}
+            </form>
+        </div>
+        <div class="user_area">
+            <h2>Register</h2>
+            <hr>
+            <form action="" method="post" name="register">
+                <p>Username: <input type="text" name="username"></p>
+                <p>Password : <input type="password" name="password"></p>
+                <input type="submit" value="Create Account" name="register">
+                {% if register_error %}
+                    <p style="font-weight:bold;color:#FAA" class="error">Error: {{ register_error }}</p>{% endif %}
+                {% if registered %}
+                    <p style="color:green;font-weight: bold">{{ registered }}</p>{% endif %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>

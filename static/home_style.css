@@ -1,16 +1,37 @@
 #border1
 {
 	border-radius:200px;
+	border-style: outset;
 	background:#3333DD;
+	background: linear-gradient(to bottom right, #DDF 5%, rgba(60,60,230,1),#DDF 95%);
 	color:#FAFAFA;
 	padding:50px;
 }
 
 body
 {
+	font: 100% verdana, arial, sans-serif;
 	background: #FDDD60;
-
+	background: linear-gradient(#FDDD60,#FE8 400px,#FDDD60);
+	margin: 50px;
 	color:#3333DD;
+}
+
+#login
+{
+	float: left;
+	padding:0px 10px;
+}
+
+#register
+{
+	float: left;
+	padding:0px 10px;
+}
+
+#products
+{
+	float: right;
 }
 
 div.header h1
@@ -21,7 +42,7 @@ div.header h1
 
 div.header h2
 {
-	text-align:right;
+
 }
 
 div.header img
@@ -33,17 +54,41 @@ div.header img
 div.banner img
 {
 	width:100%;
-	height:200px;
+	border-style: groove;
+}
+
+div.user_area
+{
+	width:40%;
+	alignment: center;
+	color:#000080;
+	font-size: 20px;
+	background:#FAFAFA;
+	border-style: groove;
+	padding:40px 25px;
+	margin:20px auto;
 }
 
 div.featured_content
 {
-	color:black;
-	font-family: Arial;
+	color:#000080;
 	font-size: 20px;
 	background:#FAFAFA;
 	padding:10px 25px;
 	margin:20px;
+}
+
+div.featured_content img
+{
+	width:200px;
+	height:auto;
+}
+
+div.feature_header
+{
+	font-size:30px;
+	border-bottom: solid 2px;
+	text-align:center;
 }
 
 img.featured_icon
@@ -58,12 +103,22 @@ h1
 	text-align:center;
 }
 
-a.cart_link:link
+a.link
 {
-    color:blue;
+    text-decoration: none;
 }
 
-a.cart_link:hover
+a.link:link
 {
-    background:#FAFAFA;
+    color:#33D;
+}
+
+a.link:hover
+{
+    color:#FAFAFA;
+}
+
+a.link:visited
+{
+    color:#33D;
 }

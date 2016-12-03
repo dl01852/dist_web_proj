@@ -1,47 +1,151 @@
-body {
-font: 100% verdana, arial, sans-serif;
-background-color: #fff;
-margin: 50px;
+*
+{
+    margin:0px;
+    padding:0px;
+}
+
+body
+{
+    font: 100% verdana, arial, sans-serif;
+    background:#FDDD60;
+    background: linear-gradient(#FDDD60,#FFB 400px,#FDDD60);
+    /*background: linear-gradient(to right, rgba(250,210,99,1),rgba(250,210,99,.4));*/
+    margin: 4%;
+}
+
+#user_text
+{
+    float:right;
+    margin:10px 5px;
+    color:#000080;
 }
 
 /* begin css tabs */
 
-ul#tabnav { /* general settings */
-text-align: left; /* set to left, right or center */
-margin: 1em 0 1em 0; /* set margins as desired */
-font: bold 12px verdana, arial, sans-serif; /* set font as desired */
-border-bottom: 1px solid #DAA520; /* line color*/
-list-style-type: none;
-padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
+#tabs
+{
+    font: bold 12px verdana, arial, sans-serif; /* set font as desired */
+    width:550px;
+    margin: 10px auto;
 }
 
-ul#tabnav li { /* do not change */
-display: inline;
+#tabnav
+{ /* do not change */
+    padding-bottom:5px;
+    border-bottom: 2px solid #DAA520; /* line color*/
 }
 
-body#tab1 li.tab1, body#tab2 li.tab2, body#tab3 li.tab3, body#tab4 li.tab4 { /* settings for selected tab */
-border-bottom: 1px solid #fff; /* set border color to page background color */
-background-color: #fff; /* set background color to match above border color */
+.tab
+{ /* settings for selected tab */
+    display: inline;
+    margin: 0px 10px;
 }
 
-body#tab1 li.tab1 a, body#tab2 li.tab2 a, body#tab3 li.tab3 a, body#tab4 li.tab4 a { /* settings for selected tab link */
-background-color: #fff; /* set selected tab background color as desired */
-color: #000; /* set selected tab link color as desired */
-position: relative;
-top: 1px;
-padding-top: 4px; /* must change with respect to padding (X) above and below */
+a.link:link
+{ /* settings for selected tab link */
+    background-color: #fff; /* set selected tab background color as desired */
+    color: #000; /* set selected tab link color as desired */
+    position: relative;
+    top: 1px;
+    padding: 4px 3px;
 }
 
-ul#tabnav li a { /* settings for all tab links */
-padding: 3px 4px; 
-border: 1px solid #DAA520; /* tabborder color */
-background-color:	#000080 ; /* tab background */
-color: #fff; /* tab font color */
-margin-right: 0px; 
-text-decoration: none;
-border-bottom: none;
+a.link
+{ /* settings for all tab links */
+    padding: 3px 4px;
+    border: 1px solid #DAA520; /* tabborder color */
+    background-color:	#000080 ; /* tab background */
+    color: #fff; /* tab font color */
+    text-decoration: none;
+    border-bottom: none;
 }
 
-ul#tabnav a:hover { /* settings for hover effect */
-background:#fff; /* set desired hover color */
+a.link:hover
+{ /* settings for hover effect */
+    background:#bbf; /* set desired hover color */
+}
+
+#banner
+{
+    width: 100%;
+    border-style: groove;
+}
+
+h1
+{
+    text-align: center;
+    font-size: 32pt;
+    color: #3333DD
+}
+
+#h2
+{
+    float:right;
+    width:50px;
+	height: 50px;
+}
+
+h3
+{
+    text-align: right;
+    width:25px;
+	height:25px;
+}
+
+#border1
+{
+	border-radius:200px;
+    border-style: outset;
+	background:#3333DD;
+    background: linear-gradient(to bottom right, #DDF 5%, rgba(60,60,230,1),#DDF 95%);
+	color:#FAFAFA;
+	padding:50px;
+}
+
+a.home_link
+{
+    text-decoration: none;
+}
+
+a.home_link:link
+{
+    color:blue;
+}
+
+a.home_link:hover
+{
+    color:gold;
+}
+
+a.home_link:visited
+{
+    color:#FAFAFA;
+}
+
+table.product_table
+{
+    margin:auto;
+    background:#FAFAFA;
+    color:#000040;
+    border: 1px solid #666;
+    border-collapse: collapse;
+}
+
+table.product_table th
+{
+    font-size: 24px;
+    background: #99F;
+    padding:20px;
+}
+
+table.product_table td
+{
+    font-size: 16px;
+    padding:15px;
+
+}
+
+table.product_table tr:hover
+{
+    background-color:#eef;
 }

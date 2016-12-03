@@ -3,11 +3,12 @@
 <html>
     <head>
 	   <meta charset = "utf-8">
-	   <title>PSU Page</title>
-	    <link href="../static/text.css" rel="stylesheet" type="text/css" />
+	   <title>Product Page</title>
+        <link href = "../static/text.css" rel = "stylesheet" type = "text/css"/>
 	 </head>
 	 <body>
-	 <center> GSU Computer INC.</center>
+	<h1 id = "border1"><a href="/" class = "home_link">GSU Computer Company</a></h1><a href="cart"><img id = "h2" src="static/cart.png" align = "right"></a>
+     <img id="banner" src="static/motherboard2_edited.jpg" >
 	<ul id="tabnav">
 {#  <li class="tab1"><a href="#">Towers</a></li>#}
   <li class="tab2"><a href="CPUs">CPUS</a></li>
@@ -20,17 +21,29 @@
 {#  <li class="tab9"><a href="#">Coolers</a></li>#}
 {#  <li class="tab10"><a href="#">OS</a></li>#}
 
+
 </ul>
 
 
-     <p> {% for supply in supplies %}
-         <ul>
-             <li> Brand: {{ supply.brand }} </li>
-           <li> Model: {{ supply.model }}</li>
-            <li>{{ supply.maxpower }}</li>
-            <li> {{ supply.dimensions }}</li>
-         </ul>
-     {% endfor %}
+     <p>
+         <table>
+         <tr>
+             <td>Brand</td>
+             <td>Model</td>
+             <td>Max Power</td>
+             <td>Dimensions</td>
+         </tr>
+         {% for powerSupply in supplies %}
+         <tr>
+             <td> {{ powerSupply.brand }}</td>
+             <td> {{ powerSupply.model }}</td>
+             <td> {{ powerSupply.maxpower }}</td>
+             <td> {{ powerSupply.dimensions }}</td>
+            <td> <img src={{ powerSupply.img }}></td>
+         </tr>
+        {% endfor %}
+         </table>
+
      </p>
 	  </body>
 </html>
